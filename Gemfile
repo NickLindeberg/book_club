@@ -39,7 +39,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
-  gem 'simplecov', require: false, group: :test
+  gem 'simplecov', require: false, group: :testg
 end
 
 group :development do
