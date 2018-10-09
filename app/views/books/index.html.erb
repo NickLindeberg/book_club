@@ -2,9 +2,9 @@
 
 <% @books.each do |b| %>
   <ul>
-    <li><%= b.title %></li>
-    <li><%= b.pages %></li>
-    <li><%= b.year %></li>
+    <li>Title: <%= b.title %></li>
+    <li>Number of Pages: <%= b.pages %> pages</li>
+    <li>Year Written: <%= b.year %></li>
   </ul>
 
 <% end %>
