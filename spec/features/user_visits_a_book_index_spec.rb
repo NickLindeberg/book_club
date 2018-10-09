@@ -13,7 +13,5 @@ describe 'user visits book index' do
     expect(page).to have_content("Title: #{book_2.title}")
     expect(page).to have_content("Number of Pages: #{book_2.pages}")
     expect(page).to have_content("Year Written: #{book_2.year}")
-
-
   end
 end
