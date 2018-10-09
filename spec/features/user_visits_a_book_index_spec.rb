@@ -8,11 +8,9 @@ describe 'user visits book index' do
     visit books_path
 
     expect(page).to have_content(book_1.title)
-    expect(page).to have_content(book_1.author)
     expect(page).to have_content(book_1.pages)
     expect(page).to have_content(book_1.year)
     expect(page).to have_content(book_2.title)
-    expect(page).to have_content(book_2.author)
     expect(page).to have_content(book_2.pages)
     expect(page).to have_content(book_2.year)
 
