@@ -1,0 +1,16 @@
+<div class="form">
+  <%= form_for @book do |b| %>
+  <div>
+    <%= b.label :title %>
+    <%= b.text_field :title %>
+  </div>
+   <div>
+    <%= b.label :authors %>
+    <%= b.text_field :authors %>
+  </div>
+   <div>
+    <%= b.label :pages %>
+    <%= b.text_field :pages %>
+  </div>
+<% end %>
+</div>
