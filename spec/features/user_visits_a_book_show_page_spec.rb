@@ -31,4 +31,20 @@ describe 'User visits book show' do
     expect(page).to have_content(review_2.description)
     expect(page).to have_content(review_2.score)
   end 
+
+
+  it 'allows user to delete book' do
+    author_1 = Author.create(name: "Mary Sue")
+    book_1 = author_1.books.create(title: "A book about Joe", pages: 430, year: 1947)
+    user_1 = User.create(name: "Joey Fatone")
+    review_1 = book_1.reviews.create(title: "Sharks are fun", description: "Who doesn't love a good shark...?", score: 5, user: user_1)
+    review_2 = book_1.reviews.create(title: "Sharks are awful", description: "Only evil people love sharks...?", score: 1, user: user_1)
+
+    visit book_path(book_1)
+
+    expect(page).to have_content(review_1.title)
+    click_link "Delete"
+    expect(current_path).to eq(books_path)
+
+  end 
 end
