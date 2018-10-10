@@ -5,6 +5,9 @@
     <li>Title: <%= b.title %></li>
     <li>Number of Pages: <%= b.pages %> pages</li>
     <li>Year Written: <%= b.year %></li>
+    <% b.authors.each do |a| %>
+      <li>Author: <%= a.name %></li>
+    <% end %>
   </ul>
 
 <% end %>
