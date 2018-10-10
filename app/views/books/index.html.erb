@@ -2,7 +2,9 @@
 
 <% @books.each do |b| %>
   <ul>
-    <li>Title: <%= b.title %> </li>
+    <li>Title: <%= b.title %></li>
+    <li>Total Reviews: <%= b.reviews.total_reviews %></li>
+    <li>Average Rating: <%= b.reviews.avg_score %></li>
     <li>Number of Pages: <%= b.pages %> pages</li>
     <li>Year Written: <%= b.year %></li>
     <% b.authors.each do |a| %>
