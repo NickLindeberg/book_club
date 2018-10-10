@@ -1,0 +1,10 @@
+<h1>All Books</h1>
+
+<% @books.each do |b| %>
+  <ul>
+    <li>Title: <%= b.title %></li>
+    <li>Number of Pages: <%= b.pages %> pages</li>
+    <li>Year Written: <%= b.year %></li>
+  </ul>
+
+<% end %>
