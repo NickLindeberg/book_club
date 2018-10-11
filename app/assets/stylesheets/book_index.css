@@ -44,6 +44,7 @@ ul {
 }
 
 #title{
+  font-style: none;
   font-style: italic;
   font-size: 75px;
 }
