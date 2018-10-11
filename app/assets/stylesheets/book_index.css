@@ -1,3 +1,6 @@
+
+
+
 body{
   background: aliceblue;
 }
@@ -6,7 +9,7 @@ body{
   display: grid;
   grid-column-gap: 0px;
   grid-template-columns: auto auto auto;
-  background-color: darkblue;
+  background-color: darkblues;
   padding: 1px;
 }
 .grid-item {
@@ -14,7 +17,10 @@ body{
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 10px;
   font-size: 30px;
+  size: 50px;
   text-align: center;
+  align-content: center;
+  box-sizing: border-box;
 }
 
 h1{
@@ -28,47 +34,40 @@ ul {
 
 
 #all-books-list{
-  font-size: 50px;
+  font-size: 40px;
+  display: flex;
 }
 
 #title{
-  font-size: 200px;
   font-style: italic;
-}
-
-#total-reviews, #avg-score{
-  font-style: bold;
+  font-size: 75px;
 }
 
 #title-tag{
   visibility: hidden;
 } 
+
+#total-reviews, #avg-score{
+  font-style: bold;
+}
+
+
 #author-tag,
 #total-reviews-tag, 
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
   font-size: 30px;
-  visibility: hidden;
+  visibility: visibles;
 }
 
-.item1 {
-  grid-column: 1 / span 2;
-  grid-row: 1;
+.item1{
+  font-size: 30px;
+  width: 500px;
+  height: 200px;
 }
-.item2 {
-  grid-column: 3;
-  grid-row: 1 / span 2;
-}
-.item3 {
-  grid-column: 3;
-  grid-row: 1 / span 2;
-}
-.item4 {
-  grid-column: 3;
-  grid-row: 1 / span 2;
-}
-.item5 {
-  grid-column: 1 / span 3;
-  grid-row: 3;
+
+.item2, .item3, .item4, .item5, .item6{
+  width:200px;
+  height: 200px;
 }
