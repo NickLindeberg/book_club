@@ -5,15 +5,8 @@
   </div>
 
   <div>
-    <%= b.label :authors %>
-    <%= b.text_field :authors%> 
-    
-    <!--select name="book[author_id]" size=10>
-    <% @authors.each do |a|%>
-        <option name="<%= a.id %>"><%= a.name %></option> 
-    <% end %>
-    </select-->
-    
+    <%= b.label :authors_names %>
+    <input type="text" name="author_names" placeholder="Herman Melville, Joy Revkas">
   </div>
   
   <div>
