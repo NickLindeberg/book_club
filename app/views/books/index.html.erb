@@ -1,16 +1,86 @@
-<h1>All Books</h1>
+<!-- NAVBAR -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="grid-item">
+        <a href="#">Highest Average</a>
+      </div>
+      <div class="grid-item">
+        <a href="#">Lowest Average</a>
+      </div>
+    </div>
 
-<% @books.each do |b| %>
-  <ul>
-    <li>Title: <%= b.title %></li>
-    <li>Total Reviews: <%= b.reviews.total_reviews %></li>
-    <li>Average Rating: <%= b.reviews.avg_score %></li>
-    <li>Number of Pages: <%= b.pages %> pages</li>
-    <li>Year Written: <%= b.year %></li>
-    <% b.authors.each do |a| %>
-      <li>Author: <%= a.name %></li>
+    <div class="grid-item">
+      <div class="grid-item">
+        <a href="#">Longest</a>
+      </div>
+      <div class="grid-item">
+        <a href="#">Shortest</a>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="grid-item">
+        <a href="#">Most Reviews</a>
+      </div>
+      <div class="grid-item">
+        <a href="#">Fewest Reviews</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!--NAVBAR-->
+<%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
+
+<h1>All The Books</h1>
+
+  <div class="flex-container">
+    <% @books.each do |b| %>
+      <ul id="all-books-list">
+        <li>
+          <div class="grid-item item1">
+            <span id="title-tag">Title:</span>
+            <span id="title"><%= b.title %></span>
+          </div>
+        </li> 
+
+        <% b.authors.each do |a| %>
+        <li>
+          <div class="grid-item item2">
+            <span id="author-tag">Author:</span><br>
+            <span id="author"><%= a.name %></span>
+          </div>
+        </li>
+        <% end %>
+
+        <li>
+          <div class="grid-item item3">
+            <span id="total-reviews-tag">Total Reviews:</span> <br>
+            <span id="total-reviews"><%= b.reviews.total_reviews %></span>
+          </div>
+        </li>
+
+        <li>
+          <div class="grid-item item4">
+            <span id="avg-score-tag">Average Rating:</span> <br>
+            <span id="avg-score"><%= b.reviews.avg_score %> stars</span>
+          </div>
+        </li>
+
+        <li>
+          <div class="grid-item item5">
+            <span id="num-pages-tag">Number of Pages:</span> <br>
+            <span id="num-pages"><%= b.pages %> pages</span>
+          </div>
+        </li>
+
+        <li>
+          <div class="grid-item item6">
+            <span id="year-written-tag">Published:</span>
+            <span id="year-written"><%= b.year %></span>
+          </div>
+        </li>
+
+      </ul>
     <% end %>
-
-  </ul>
-
-<% end %>
+  </div>

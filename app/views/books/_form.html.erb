@@ -1,0 +1,33 @@
+<div class="form">
+  <%= form_for @book do |b| %>
+  <div>
+    <%= b.label :title %>
+    <%= b.text_field :title %>
+  </div>
+
+  <div>
+    <%= b.label :name %>
+    <%= b.text_field :name %> 
+    
+    <!--select name="book[author_id]" size=10>
+    <% @authors.each do |a|%>
+        <option name="<%= a.id %>"><%= a.name %></option> 
+    <% end %>
+    </select-->
+    
+  </div>
+  
+  <div>
+    <%= b.label :pages %>
+    <%= b.number_field :pages, min: 0 %>
+  </div>
+
+  <div>
+    <%= b.label :year %>
+    <%= b.date_field :year %>
+  </div>
+
+  <div><%= b.submit %></div>
+<% end %>
+
+</div>
