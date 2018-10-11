@@ -1,3 +1,4 @@
+<h1>All The Books</h1>
 <!-- NAVBAR -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="grid-container">
@@ -30,9 +31,8 @@
   </div>
 </nav>
 <!--NAVBAR-->
-<%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
 
-<h1>All The Books</h1>
+<%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
 
   <div class="flex-container">
     <% @books.each do |b| %>
