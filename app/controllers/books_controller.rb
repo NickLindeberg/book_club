@@ -9,7 +9,19 @@ class BooksController < ApplicationController
   end
 
   def new
+    @authors = Author.all
     @book = Book.new()
+  end
+
+  def create
+    require 'pry'; binding.pry
+    @author = Author.find(params[:book][:author_id])
+    @book = @author.books.create(book_params)
+    if @book.save
+      redirect_to book_path(@book)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -17,6 +29,12 @@ class BooksController < ApplicationController
     book.destroy
     flash[:success] = 'Book deleted'
     redirect_to books_path
+  end
+
+  private
+
+  def book_params
+    params.require(:book).permit(:title, :pages, :year)
   end
 
 end

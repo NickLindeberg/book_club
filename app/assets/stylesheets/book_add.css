@@ -1,0 +1,13 @@
+body{
+  background: grey;
+}
+
+h1{
+  font-family: 'Amatic SC', cursive;
+  font-size: 300px;
+  
+}
+
+a {
+  font-style: unset;
+}
