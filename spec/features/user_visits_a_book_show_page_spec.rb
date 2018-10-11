@@ -18,18 +18,22 @@ describe 'User visits book show' do
     author_1 = Author.create(name: "Mary Sue")
     book_1 = author_1.books.create(title: "A book about Joe", pages: 430, year: 1947)
     user_1 = User.create(name: "Joey Fatone")
+    user_2 = User.create(name: "Chris Farley")
     review_1 = book_1.reviews.create(title: "Sharks are fun", description: "Who doesn't love a good shark...?", score: 5, user: user_1)
-    review_2 = book_1.reviews.create(title: "Sharks are awful", description: "Only evil people love sharks...?", score: 1, user: user_1)
+    review_2 = book_1.reviews.create(title: "Sharks are awful", description: "Only evil people love sharks...?", score: 1, user: user_2)
 
     visit book_path(book_1)
 
     expect(page).to have_content(review_1.title)
     expect(page).to have_content(review_1.description)
     expect(page).to have_content(review_1.score)
+    expect(page).to have_content(user_1.name)
 
     expect(page).to have_content(review_2.title)
     expect(page).to have_content(review_2.description)
     expect(page).to have_content(review_2.score)
+    expect(page).to have_content(user_2.name)
+    
   end 
 
 
@@ -41,8 +45,6 @@ describe 'User visits book show' do
     review_2 = book_1.reviews.create(title: "Sharks are awful", description: "Only evil people love sharks...?", score: 1, user: user_1)
 
     visit book_path(book_1)
-
-    save_and_open_page
 
     expect(page).to have_content(review_1.title)
     click_link "Delete"

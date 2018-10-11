@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'user visits book index' do
-  it 'shows link to create new book' do
+  xit 'shows link to create new book' do
 
     visit books_path
 
