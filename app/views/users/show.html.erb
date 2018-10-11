@@ -1,5 +1,9 @@
+<%= link_to "All Books", books_path %>
+
 <% @user.reviews.each do |r| %>
-  <%= r.title %>
-  <%= r.score %>
-  <%= r.description %>
+  <ul>
+    <li>Review Title: <%= r.title %></li>
+    <li>Score: <%= r.score %></li>
+    <li>Description: <%= r.description %></li>
+  </ul>
 <% end %>
