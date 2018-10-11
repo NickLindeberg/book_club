@@ -17,8 +17,8 @@ class BooksController < ApplicationController
     @book = Book.create(book_params)
 
     if @book.save
-      @authors.split(",").each do |author_name|
-        author_name.chomp.titleize
+      @authors.split(", ").each do |author_name|
+        author_name.chomp
         author = Author.find_or_create_by(name: author_name)
         BookAuthor.create(book: @book, author: author)
       end

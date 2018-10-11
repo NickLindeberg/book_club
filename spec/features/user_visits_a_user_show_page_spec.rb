@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'user visits user show page' do
-  xit 'shows information for one user' do
+  it 'shows information for one user' do
 
     author_1 = Author.create(name: "Mary Sue")
     book_1 = author_1.books.create(title: "A book about Joe", pages: 430, year: 1947)

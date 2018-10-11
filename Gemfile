@@ -40,6 +40,7 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'simplecov', require: false, group: :testg
+  gem 'database_cleaner'
 end
 
 group :development do
