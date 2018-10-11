@@ -42,6 +42,8 @@ describe 'User visits book show' do
 
     visit book_path(book_1)
 
+    save_and_open_page
+
     expect(page).to have_content(review_1.title)
     click_link "Delete"
     expect(current_path).to eq(books_path)
@@ -57,4 +59,6 @@ describe 'User visits book show' do
 
     expect(current_path).to eq(books_path)
   end
+  
+  
 end

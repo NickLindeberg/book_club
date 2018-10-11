@@ -14,9 +14,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    # require 'pry'; binding.pry
+    @author = Author.find_by(params[:authors])
     @book = @author.books.create(book_params)
-    @author = @book.authors
     if @book.save
       redirect_to book_path(@book)
     else
