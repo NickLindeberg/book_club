@@ -1,4 +1,3 @@
-<div class="form">
   <%= form_for @book do |b| %>
   <div>
     <%= b.label :title %>
@@ -6,8 +5,8 @@
   </div>
 
   <div>
-    <%= b.label :name %>
-    <%= b.text_field :name %> 
+    <%= b.label :authors %>
+    <%= b.text_field :authors %> 
     
     <!--select name="book[author_id]" size=10>
     <% @authors.each do |a|%>
@@ -30,4 +29,3 @@
   <div><%= b.submit %></div>
 <% end %>
 
-</div>

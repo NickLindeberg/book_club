@@ -40,7 +40,9 @@
         <li>
           <div class="grid-item item1">
             <span id="title-tag">Title:</span>
-            <span id="title"><%= b.title %></span>
+              <span id="title">
+                <%= link_to b.title, book_path(b) %>
+              </span>
           </div>
         </li> 
 
@@ -48,7 +50,8 @@
         <li>
           <div class="grid-item item2">
             <span id="author-tag">Author:</span><br>
-            <span id="author"><%= a.name %></span>
+            <span id="author">
+            <%= link_to a.name, author_path(a) %>
           </div>
         </li>
         <% end %>

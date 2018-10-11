@@ -1,0 +1,9 @@
+<%= link_to "All Books", books_path %>
+
+<%= @author.name %>
+
+<% @author.books.each do |book| %>
+  <%= book.title %>
+  <%= book.pages %>
+  <%= book.year %>
+<% end %>

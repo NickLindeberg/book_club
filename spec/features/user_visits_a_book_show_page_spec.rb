@@ -47,4 +47,14 @@ describe 'User visits book show' do
     expect(current_path).to eq(books_path)
 
   end 
+
+  it 'user clicks home link' do
+    author_1 = Author.create(name: "Mary Sue")
+    book_1 = author_1.books.create(title: "A book about Joe", pages: 430, year: 1947)
+
+    visit book_path(book_1)
+    click_link "All Books"
+
+    expect(current_path).to eq(books_path)
+  end
 end
