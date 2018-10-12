@@ -4,8 +4,7 @@ Rails.application.routes.draw do
 
   resources :authors, only: [:show]
 
-  resources :users, only: [:show]
-  
-  resources :reviews, only: [:destroy]
-
+  resources :users, only: [:show] do
+    resources :reviews, only: [:index, :destroy]
+  end
 end
