@@ -1,9 +1,22 @@
-<%= link_to "All Books", books_path %>
+<title>
+  <%= @author.name %>
+</title>
 
-<%= @author.name %>
+<div>
+  <%= link_to "All Books", books_path %>
+</div>
 
-<% @author.books.each do |book| %>
-  <%= book.title %>
-  <%= book.pages %>
-  <%= book.year %>
-<% end %>
+<div id="author-name">
+  <%= @author.name %>
+</div>
+
+
+<div>Books by:
+  <% @author.books.each do |book| %>
+  <div>
+    <%= link_to "#{book.title}", book_path(book) %>
+    <%= book.pages %>
+    <%= book.year %>
+  </div>
+  <% end %>
+</div>

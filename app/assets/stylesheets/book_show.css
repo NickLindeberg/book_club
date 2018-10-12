@@ -1,0 +1,29 @@
+.book-entry{
+  font-size: 30px;
+}
+
+#book-title{
+  font-size: 200%;
+
+}
+
+#all-books-div{
+  margin: 50px;
+  width: auto;
+}
+
+#all-books-link{
+  color: #5F050E;
+}
+
+#delete-book-link{
+  color: #5F050E;
+  font-size: 20px;
+}
+
+#book-reviews{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+  margin: 50px;
+}
+

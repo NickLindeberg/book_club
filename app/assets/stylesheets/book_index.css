@@ -4,33 +4,52 @@
   font-family: monospace
 }
 
+#create-book-link-wrapper{
+  color: #891012;
+  margin: 20px;
+  width: 220px;
+}
+
 body{
-  background: aliceblue;
+  background: #645A50;
 }
 
 .grid-container {
   display: grid;
   grid-column-gap: 0px;
   grid-template-columns: auto auto auto;
-  background-color: darkblues;
-  padding: 1px;
+  background-color: #9E8553;
+  margin: 20px;
 }
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 4px solid rgba(0, 0, 0, 0.8);
+  background-color: #485678;
   padding: 10px;
-  font-size: 30px;
+  font-size: 100%;
   size: 50px;
   text-align: center;
   align-content: center;
   box-sizing: border-box;
+  text-decoration: none;
+  margin: 40px;
+  border: papayawhip;
+}
+
+#sorting-menu{
+  margin: 10px;
+}
+
+.nav-grid{
+  color: #485678;
+  margin: 1px;
+  border-style: solid;
+  border: transparent; 
 }
 
 h1{
-  color: chocolate;
-  margin: 0px;
+  color: #9E8553;
   text-align: center;
+  margin: 0px;
 }
 
 ul {
@@ -43,13 +62,23 @@ ul {
   display: flex;
 }
 
-#title{
+
+
+#title-link{
+  text-decoration: none;
   font-style: none;
-  font-style: italic;
-  font-size: 75px;
+  font-size: 40px;
+  align-content: center;
+}
+
+#author{
+  font-style: none;
+  text-decoration: none;
 }
 
 #title-tag{
+  font-size: 100%;
+  line-height: 50%;
   visibility: hidden;
 } 
 
@@ -57,23 +86,41 @@ ul {
   font-style: bold;
 }
 
-
 #author-tag,
 #total-reviews-tag, 
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
-  font-size: 30px;
+  font-size: 50%;
   visibility: visible;
 }
 
 .item1{
   font-size: 30px;
-  width: 900px;
+  width: 100%;
   height: 200px;
 }
 
 .item2, .item3, .item4, .item5, .item6{
-  width: 250px;
+  width: 100%;
   height: 200px;
 }
+
+a, #create-book-link{
+  color: rgb(141, 114, 114);
+  font-size: 30px;
+  padding: 0px;
+  text-decoration: none;
+  padding: 1px;
+}
+
+a:hover, #create-book-link:hover{
+  font-size: 30px;
+  color: blue;
+}
+
+#length-sort-links{
+  align-items: center;
+
+}
+
