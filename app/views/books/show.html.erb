@@ -1,8 +1,9 @@
-<div class="container">
-  <div>
+ <div id=all-books-div>
     <%= link_to "All Books", books_path, id: "all-books-link"%>
-
   </div>
+
+
+<div class="container">
 
   <div class="book-entry">
 
@@ -19,14 +20,15 @@
   </div>
     
   </div>
+<i class="fa fa-trash"></i>
   <%= link_to "Delete", book_path(@book), method: "delete", id: "delete-book-link" %> 
 </div>
 
 <div id="book-reviews">Reviews:
-      <% @book.reviews.each do |r| %>
-      <%= link_to r.user.name, user_path(r)%>
-      <%= r.title %>
-      <%= r.description %>
-      <%= r.score %>
-      <% end %>
-    </div>
+  <% @book.reviews.each do |r| %>
+  <%= link_to r.user.name, user_path(r)%>
+  <%= r.title %>
+  <%= r.description %>
+  <%= r.score %>
+  <% end %>
+</div>
