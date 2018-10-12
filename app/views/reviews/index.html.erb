@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<%= link_to "All Books", books_path %>
+
+<% @reviews.each do |r| %>
+  <%= r.title  %>
+  <%= r.score  %>
+  <%= r.description  %>
+  <%= link_to "Delete", user_review_path(r.user_id, r), method: 'delete'%>
+
+<% end %>

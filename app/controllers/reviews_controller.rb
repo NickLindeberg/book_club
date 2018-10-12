@@ -1,12 +1,13 @@
 class ReviewsController < ApplicationController
 
+  def index
+    @reviews = Review.all
+  end
+
   def destroy
-    binding.pry
-    @user = User.find(params[:id])
-    review = Review.find(@user.id)
-    
+    review = Review.find(params[:id])
     review.destroy
-    redirect_to user_path(@user)
+    redirect_to user_reviews_path
   end
 
 
