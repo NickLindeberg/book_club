@@ -2,6 +2,11 @@
   font-size: 30px;
 }
 
+#book-title{
+  font-size: 200%;
+
+}
+
 #all-books-div{
   margin: 50px;
   width: auto;
