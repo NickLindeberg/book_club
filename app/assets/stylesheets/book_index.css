@@ -4,6 +4,12 @@
   font-family: monospace
 }
 
+#book-link-wrapper{
+  color: #891012;
+  margin: 20px;
+  width: 220px;
+}
+
 body{
   background: #645A50;
 }
@@ -13,7 +19,7 @@ body{
   grid-column-gap: 0px;
   grid-template-columns: auto auto auto;
   background-color: #9E8553;
-  padding: 40px;
+  margin: 20px;
 }
 
 .grid-item {
@@ -26,21 +32,23 @@ body{
   box-sizing: border-box;
   text-decoration: none;
   margin: 40px;
-  
+}
+
+#sorting-menu{
+  margin: 10px;
 }
 
 .nav-grid{
   color: #485678;
-}
-
-.grid-item:hover{
-  border: red;
+  margin: 1px;
+  border-style: solid;
+  border: transparent; 
 }
 
 h1{
   color: #9E8553;
-  margin: 0px;
   text-align: center;
+  font-size: 100%;
 }
 
 ul {
@@ -52,6 +60,8 @@ ul {
   font-size: 40px;
   display: flex;
 }
+
+
 
 #title-link{
   text-decoration: none;
@@ -109,8 +119,8 @@ a:hover, #create-book-link:hover{
   padding: 0px;
 }
 
-#library-image{
-  width: 100%;
-  position: static;
+#length-sort-links{
+  align-items: center;
 
 }
+

@@ -1,39 +1,41 @@
-<img src="https://bluesyemre.files.wordpress.com/2013/03/professor-richard-a-mackseys-personal-library.jpg" id="library-image" alt="library">
 <h1>All The Books</h1>
+<!--img src="https://bluesyemre.files.wordpress.com/2013/03/professor-richard-a-mackseys-personal-library.jpg" id="library-image" alt="library"-->
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="grid-container">
+  <div class="grid-container" id="sorting-menu">
+    
     <div class="grid-item">
-      <div class="grid-item nav-grid">
+      <div>
         <a href="#">Highest Average</a>
       </div>
-      <div class="grid-item nav-grid">
+
+      <div>
         <a href="#">Lowest Average</a>
       </div>
     </div>
-
-    <div class="grid-item nav-grid">
-      <div class="grid-item">
+    
+    <div class="grid-item" id="length-sort-links">
+      <div>
         <a href="#">Longest</a>
       </div>
-      <div class="grid-item nav-grid">
-        <a href="#">Shortest</a>
+      <div>
+          <a href="#">Shortest</a>
       </div>
-    </div>
+    </div>  
 
-    <div class="grid-item nav-grid">
-      <div class="grid-item">
+    <div class="grid-item">
+      <div>
         <a href="#">Most Reviews</a>
       </div>
-      <div class="grid-item nav-grid">
+      <div>
         <a href="#">Fewest Reviews</a>
       </div>
     </div>
   </div>
 </nav>
 <!--NAVBAR-->
-  <div id="link-wrapper">
+  <div class="link-wrapper" id="book-link-wrapper">
     <%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
   </div>
   <div class="flex-container">
