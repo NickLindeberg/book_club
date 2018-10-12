@@ -4,7 +4,7 @@
   font-family: monospace
 }
 
-#book-link-wrapper{
+#create-book-link-wrapper{
   color: #891012;
   margin: 20px;
   width: 220px;
@@ -32,6 +32,7 @@ body{
   box-sizing: border-box;
   text-decoration: none;
   margin: 40px;
+  border: papayawhip;
 }
 
 #sorting-menu{
@@ -48,6 +49,7 @@ body{
 h1{
   color: #9E8553;
   text-align: center;
+  margin: 0px;
 }
 
 ul {
@@ -75,7 +77,7 @@ ul {
 }
 
 #title-tag{
-  font-size: 50%;
+  font-size: 100%;
   line-height: 50%;
   visibility: hidden;
 } 
