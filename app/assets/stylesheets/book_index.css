@@ -5,7 +5,7 @@
 }
 
 body{
-  background: aliceblue;
+  background: lightseagreen;
 }
 
 .grid-container {
@@ -20,7 +20,7 @@ body{
   background-color: rgba(255, 255, 255, 0.8);
   border: 4px solid rgba(0, 0, 0, 0.8);
   padding: 10px;
-  font-size: 30px;
+  font-size: 100%;
   size: 50px;
   text-align: center;
   align-content: center;
@@ -28,7 +28,7 @@ body{
 }
 
 h1{
-  color: chocolate;
+  color: yellowgreen;
   margin: 0px;
   text-align: center;
 }
@@ -46,10 +46,12 @@ ul {
 #title{
   font-style: none;
   font-style: italic;
-  font-size: 75px;
+  font-size: 100%;
 }
 
 #title-tag{
+  font-size: 50%;
+  line-height: 50%;
   visibility: hidden;
 } 
 
@@ -57,23 +59,33 @@ ul {
   font-style: bold;
 }
 
-
 #author-tag,
 #total-reviews-tag, 
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
-  font-size: 30px;
+  font-size: 50%;
   visibility: visible;
 }
 
 .item1{
   font-size: 30px;
-  width: 900px;
+  width: 100%;
   height: 200px;
 }
 
 .item2, .item3, .item4, .item5, .item6{
-  width: 250px;
+  width: 100%;
   height: 200px;
+}
+
+#create-book-link{
+  font-size: 30px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+#create-book-link:hover{
+  color: lightblue;
+
 }
