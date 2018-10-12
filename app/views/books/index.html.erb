@@ -3,7 +3,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="grid-container" id="sorting-menu">
-    
+
     <div class="grid-item">
       <div>
         <a href="#">Highest Average</a>
@@ -13,7 +13,7 @@
         <a href="#">Lowest Average</a>
       </div>
     </div>
-    
+
     <div class="grid-item" id="length-sort-links">
       <div>
         <a href="#">Longest</a>
@@ -21,7 +21,7 @@
       <div>
           <a href="#">Shortest</a>
       </div>
-    </div>  
+    </div>
 
     <div class="grid-item">
       <div>
@@ -56,7 +56,7 @@
         <li>
           <div class="grid-item item2">
             <span id="author-tag">Author:</span><br>
-            <div id="author">
+            <div id="author-<%= b.id %>">
               <%= link_to a.name, author_path(a), id: 'author-link' %>
             </div>
           </div>
@@ -82,14 +82,14 @@
         <li>
           <div class="grid-item item5">
             <span id="num-pages-tag">Number of Pages:</span> <br>
-            <div id="num-pages"><%= b.pages %> pages</div>
+            <div id="num-pages-<%= b.id %>"><%= b.pages %> pages</div>
           </div>
         </li>
 
         <li>
           <div class="grid-item item6">
             <span id="year-written-tag">Published:</span>
-            <div id="year-written"><%= b.year %></div>
+            <div id="year-written-<%= b.id %>"><%= b.year %></div>
           </div>
         </li>
 

@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @reviews = Review.where("user_id = ?", params[:user_id])
   end
 
   def destroy

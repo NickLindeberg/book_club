@@ -13,7 +13,7 @@ describe 'user visits user show page' do
 
     first(:link, "Joey Fatone").click
 
-    expect(current_path).to eq(user_path(user_1))
+    expect(current_path).to eq(user_reviews_path(user_1))
     expect(page).to have_content(review_1.title)
     expect(page).to have_content(review_1.score)
     expect(page).to have_content(review_1.description)

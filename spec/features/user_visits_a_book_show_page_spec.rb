@@ -12,7 +12,7 @@ describe 'User visits book show' do
     expect(page).to have_content(book_1.pages)
     expect(page).to have_content(book_1.year)
     expect(page).to_not have_content(book_2.title)
-  end 
+  end
 
   it 'show the reviews for a single book' do
     author_1 = Author.create(name: "Mary Sue")
@@ -33,8 +33,8 @@ describe 'User visits book show' do
     expect(page).to have_content(review_2.description)
     expect(page).to have_content(review_2.score)
     expect(page).to have_content(user_2.name)
-    
-  end 
+
+  end
 
 
   it 'allows user to delete book' do
@@ -50,7 +50,7 @@ describe 'User visits book show' do
     click_link "Delete"
     expect(current_path).to eq(books_path)
 
-  end 
+  end
 
   it 'user clicks home link' do
     author_1 = Author.create(name: "Mary Sue")
@@ -61,6 +61,6 @@ describe 'User visits book show' do
 
     expect(current_path).to eq(books_path)
   end
-  
-  
+
+
 end

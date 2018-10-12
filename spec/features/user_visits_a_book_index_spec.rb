@@ -8,15 +8,27 @@ describe 'user visits book index' do
 
     visit books_path
 
-    expect(page).to have_content("Title: #{book_1.title}")
-    expect(page).to have_content("Number of Pages: #{book_1.pages}")
-    expect(page).to have_content("Published: #{book_1.year}")
-    expect(page).to have_content("Author: #{author_1.name}")
+    expect(page).to have_content(book_1.title)
+    within("#num-pages-#{book_1.id}") do
+      expect(page).to have_content(430)
+    end
+    within("#year-written-#{book_1.id}") do
+      expect(page).to have_content(1947)
+    end
+    within("#author-#{book_1.id}") do
+      expect(page).to have_content("Mary Sue")
+    end
 
-    expect(page).to have_content("Title: #{book_2.title}")
-    expect(page).to have_content("Number of Pages: #{book_2.pages}")
-    expect(page).to have_content("Published: #{book_2.year}")
-    expect(page).to have_content("Author: #{author_1.name}")
+    expect(page).to have_content(book_2.title)
+    within("#num-pages-#{book_2.id}") do
+      expect(page).to have_content(200)
+    end
+    within("#year-written-#{book_2.id}") do
+      expect(page).to have_content(1965)
+    end
+    within("#author-#{book_2.id}") do
+      expect(page).to have_content("Mary Sue")
+    end
   end
 
   it 'shows books averages and total reviews' do
@@ -27,8 +39,12 @@ describe 'user visits book index' do
     review_2 = book_1.reviews.create(title: "Sharks are awful", description: "Only evil people love sharks...?", score: 1, user: user_1)
 
     visit books_path
-    
-    expect(page).to have_content("Total Reviews: 2")
-    expect(page).to have_content("Average Rating: 3")
+
+    within("#total-reviews") do
+      expect(page).to have_content(2)
+    end
+    within("#avg-score") do
+      expect(page).to have_content(3)
+    end
   end
 end

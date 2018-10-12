@@ -22,15 +22,15 @@
       <%= "Published: #{@book.year}" %>
     </div>
   </div>
-    
+
   </div>
 <i class="fa fa-trash"></i>
-  <%= link_to "Delete", book_path(@book), method: "delete", id: "delete-book-link" %> 
+  <%= link_to "Delete", book_path(@book), method: "delete", id: "delete-book-link" %>
 </div>
 
 <div id="book-reviews">Reviews:
   <% @book.reviews.each do |r| %>
-  <%= link_to r.user.name, user_path(r)%>
+  <%= link_to r.user.name, user_reviews_path(r.user_id)%>
   <%= r.title %>
   <%= r.description %>
   <%= r.score %>
