@@ -1,17 +1,32 @@
-<%= link_to "All Books", books_path %>
-<%= link_to "Delete", book_path(@book), method: "delete" %> 
+<div class="container">
+  <div>
+    <%= link_to "All Books", books_path, id: "all-books-link"%>
 
-<%= @book.title %>
-<%= @book.pages %>
-<%= @book.year %>
+  </div>
 
-<% @book.authors.each do |a| %>
-  <%= a.name %>
-<% end %>
+  <div class="book-entry">
 
-<% @book.reviews.each do |r| %>
-<%= link_to r.user.name, user_path(r)%>
-<%= r.title %>
-<%= r.description %>
-<%= r.score %>
-<% end %>
+    <div id="book-title"><%= @book.title %></div>
+
+    <% @book.authors.each do |a| %>
+      <%= a.name %>
+    <% end %>
+
+    <div id="book-pages">
+      <%= "#{@book.pages} pages" %>
+      <%= @book.year %>
+    </div>
+  </div>
+    
+  </div>
+  <%= link_to "Delete", book_path(@book), method: "delete", id: "delete-book-link" %> 
+</div>
+
+<div id="book-reviews">Reviews:
+      <% @book.reviews.each do |r| %>
+      <%= link_to r.user.name, user_path(r)%>
+      <%= r.title %>
+      <%= r.description %>
+      <%= r.score %>
+      <% end %>
+    </div>

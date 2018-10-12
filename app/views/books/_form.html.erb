@@ -6,17 +6,15 @@
 
   <div>
     <%= b.label :authors_names %>
-    <input type="text" name="author_names" placeholder="Herman Melville, Joy Revkas">
+    <input type="text" name="author_names" placeholder="">
   </div>
 
   <div>
     <%= b.label :pages %>
-    <%= b.number_field :pages, min: 0 %>
-  </div>
+    <%= b.number_field :pages, min: 0, id: "pages-field" %>
 
-  <div>
     <%= b.label :year %>
-    <%= b.number_field :year, min: 1200, max: 2018 %>
+    <%= b.number_field :year, min: 1200, max: 2018, id: "year-field" %>
   </div>
 
   <div><%= b.submit %></div>

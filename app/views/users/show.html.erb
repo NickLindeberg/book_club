@@ -1,5 +1,7 @@
 <%= link_to "All Books", books_path %>
 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <% @user.reviews.each do |r| %>
   <ul>
     <li>Review Title: <%= r.title %></li>
@@ -8,4 +10,3 @@
     <%= link_to "Delete", review_path(r), method: 'delete'%>
   </ul>
 <% end %>
-lower right pencil	N/A	#9998;	p:before{content:"\270E";}	console.log("\u270E");
