@@ -38,5 +38,5 @@
 </div>
 
 <div id="add-review-link">
-<a href="#">Write a Review</a>
+  <%= link_to 'Write a Review', new_review_path(book_id: @book.id)  %>
 </div>

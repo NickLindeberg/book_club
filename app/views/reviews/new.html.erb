@@ -1,0 +1,28 @@
+Create New Review for
+
+
+
+<%= form_for @review do |r| %>
+<%= r.hidden_field :book_id, value: @book.id %>
+<div>
+  <%= r.label :title %>
+  <%= r.text_field :title %>
+</div>
+
+<div>
+  <%= r.label :user_name %>
+  <input type="text" name="user_name" placeholder="Your Name">
+
+</div>
+
+<div>
+  <%= r.label :score %>
+  <%= r.number_field :score, min: 1, max: 5 %>
+
+  <%= r.label :description %>
+  <%= r.text_area :description %>
+</div>
+
+<div><%= r.submit %></div>
+
+<% end %>
