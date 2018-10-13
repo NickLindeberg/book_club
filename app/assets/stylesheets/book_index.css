@@ -56,6 +56,7 @@ ul {
   font-size: 20px;
   display: flex;
   background: #8AB282;
+  padding-bottom: 30px;
 }
 
 #title-link{
@@ -72,14 +73,14 @@ ul {
 } 
 
 #title{
-  width: 500px;
+  width: 90%;
   height: auto;
   text-align: center;
 }
 
 #authors-list{
-  width: 200px;
-  height: 200px;
+  width: 90%;
+  height: auto;
   font-style: none;
   text-decoration: none;
 }
@@ -93,7 +94,7 @@ ul {
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
-  width: 200px;
+  width: 90%;
   height: auto;
   font-size: 50%;
   visibility: visible;
