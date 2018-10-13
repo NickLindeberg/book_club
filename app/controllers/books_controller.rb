@@ -22,7 +22,6 @@ class BooksController < ApplicationController
         author = Author.find_or_create_by(name: author_name)
         BookAuthor.create(book: @book, author: author)
       end
-
       redirect_to book_path(@book)
     else
       redirect_to new_book_path
