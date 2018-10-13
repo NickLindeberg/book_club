@@ -15,7 +15,7 @@
 </div>
 <!-- CREATE BOOK LINK -->
 
-  
+
   <% @books.each do |b| %>
     <ul id="all-books-list">
       <li>
@@ -41,7 +41,7 @@
 
       <li>
         <span id="avg-score-tag">Average Rating:</span> <br>
-        <div id="avg-score"><%= b.reviews.avg_score %> n/a </div>
+        <div id="avg-score"><%= b.reviews.avg_score %></div>
       </li>
 
       <li>
