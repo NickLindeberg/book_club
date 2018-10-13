@@ -1,101 +1,76 @@
-<!--img src="https://bluesyemre.files.wordpress.com/2013/03/professor-richard-a-mackseys-personal-library.jpg" id="library-image" alt="library"-->
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="grid-container" id="sorting-menu">
-
-    <div class="grid-item">
-      <div>
+<!--SORTING LINKS -->
+    <span id="link-bar">
+      <div class="sorting-link">
         <a href="#">Highest Average</a>
       </div>
 
-      <div>
+      <div class="sorting-link">
         <a href="#">Lowest Average</a>
       </div>
-    </div>
 
-    <div class="grid-item" id="length-sort-links">
-      <div>
+      <div class="sorting-link">
         <a href="#">Longest</a>
       </div>
-      <div>
+
+      <div class="sorting-link">
           <a href="#">Shortest</a>
       </div>
-    </div>
 
-    <div class="grid-item">
-      <div>
+      <div class="sorting-link">
         <a href="#">Most Reviews</a>
       </div>
-      <div>
+
+      <div class="sorting-link">
         <a href="#">Fewest Reviews</a>
       </div>
-    </div>
-  </div>
-</nav>
-<!--NAVBAR-->
+    </span>
+<!--SORTING LINKS -->
 
 <h1>All The Books</h1>
 
-  <div class="link-wrapper" id="create-book-link-wrapper">
-    <%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
-  </div>
-  <div class="flex-container">
-    <% @books.each do |b| %>
+<div class="link-wrapper" id="create-book-link-wrapper">
+  <%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
+</div>
+  
+  <% @books.each do |b| %>
       <ul id="all-books-list">
         <li>
-          <div class="grid-item item1">
-            <span id="title-tag">Title:</span>
-              <div id="title">
-                <%= link_to b.title, book_path(b), id: 'title-link' %>
-              </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="grid-item item2">
-            <span id="author-tag">Author:</span><br>
-              
-              <div>
-              <% b.authors.each do |a| %>
-                <span id="author-<%= b.id %>"> 
-                  <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
-                </span>
-              <% end %>
-              </div>
-          </div>
-        </li>
-
-        <li>
-          <div class="grid-item item3">
-            <span id="total-reviews-tag">Total Reviews:</span> <br>
-            <div id="total-reviews">
-              <%= b.reviews.total_reviews %>
+          <span id="title-tag">Title:</span>
+            <div id="title">
+              <%= link_to b.title, book_path(b), id: 'title-link' %>
             </div>
+        </li>
+
+        <li>
+          <span id="author-tag">Author:</span><br>
+          <div>
+            <% b.authors.each do |a| %>
+              <span id="author-<%= b.id %>"> 
+                <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
+              </span>
+            <% end %>
           </div>
         </li>
 
         <li>
-          <div class="grid-item item4">
-            <span id="avg-score-tag">Average Rating:</span> <br>
-            <div id="avg-score"><%= b.reviews.avg_score %> n/a </div>
-          </div>
+          <span id="total-reviews-tag">Total Reviews:</span> <br>
+            <div id="total-reviews"><%= b.reviews.total_reviews %></div>
         </li>
 
         <li>
-          <div class="grid-item item5">
-            <span id="num-pages-tag">Number of Pages:</span> <br>
-            <div id="num-pages-<%= b.id %>"><%= b.pages %> pages</div>
-          </div>
+          <span id="avg-score-tag">Average Rating:</span> <br>
+          <div id="avg-score"><%= b.reviews.avg_score %> n/a </div>
         </li>
 
         <li>
-          <div class="grid-item item6">
-            <span id="year-written-tag">Published:</span>
-            <div id="year-written-<%= b.id %>"><%= b.year %></div>
-          </div>
+          <span id="num-pages-tag">Number of Pages:</span> <br>
+          <div id="num-pages-<%= b.id %>"><%= b.pages %> pages</div>
+        </li>
+
+        <li>
+          <span id="year-written-tag">Published:</span>
+          <div id="year-written-<%= b.id %>"><%= b.year %></div>
         </li>
 
       </ul>
-    <% end %>
-  </div>
+  <% end %>
