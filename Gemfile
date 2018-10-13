@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov', require: false, group: :testg
   gem 'database_cleaner'
+  gem 'faker'
 end
 
 group :development do

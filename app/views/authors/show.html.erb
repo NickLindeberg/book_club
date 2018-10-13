@@ -2,6 +2,8 @@
   <%= @author.name %>
 </title>
 
+<h1>AUTHOR</h1>
+
 <div>
   <%= link_to "All Books", books_path %>
 </div>
@@ -11,12 +13,17 @@
 </div>
 
 
-<div>Books by:
+<div>
+<span id="other-books">other books by author:</span>
+
   <% @author.books.each do |book| %>
   <div>
     <%= link_to "#{book.title}", book_path(book) %>
-    <%= book.pages %>
-    <%= book.year %>
   </div>
+    <span>
+      <%= book.pages %> pages |
+      published in <%= book.year %>
+    </span>
+ 
   <% end %>
 </div>

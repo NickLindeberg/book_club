@@ -1,6 +1,6 @@
- <div id=all-books-div>
+<div id=all-books-div>
     <%= link_to "All Books", books_path, id: "all-books-link"%>
-  </div>
+</div>
 
 
 <div class="container">
@@ -11,7 +11,7 @@
 
     <div id="book-authors">Author:
     <% @book.authors.each do |a| %>
-      <%= link_to a.name, author_path(a) %>
+      <%= link_to a.name, author_path(a) %>&nbsp;&nbsp;
     <% end %>
     </div>
 
@@ -35,4 +35,8 @@
   <%= r.description %>
   <%= r.score %>
   <% end %>
+</div>
+
+<div id="add-review-link">
+<a href="#">Write a Review</a>
 </div>

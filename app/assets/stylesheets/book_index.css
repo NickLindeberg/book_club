@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 
 #create-book-link{
   font-size: 50px;
@@ -10,46 +14,36 @@
   width: 220px;
 }
 
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+}
+
 body{
   background: #645A50;
-}
-
-.grid-container {
-  display: grid;
-  grid-column-gap: 0px;
-  grid-template-columns: auto auto auto;
-  background-color: #9E8553;
-  margin: 20px;
-}
-
-.grid-item {
-  background-color: #485678;
-  padding: 10px;
-  font-size: 100%;
-  size: 50px;
-  text-align: center;
-  align-content: center;
-  box-sizing: border-box;
-  text-decoration: none;
-  margin: 40px;
-  border: papayawhip;
-}
-
-#sorting-menu{
-  margin: 10px;
-}
-
-.nav-grid{
-  color: #485678;
-  margin: 1px;
-  border-style: solid;
-  border: transparent; 
 }
 
 h1{
   color: #9E8553;
   text-align: center;
   margin: 0px;
+  width: 100%;
 }
 
 ul {
@@ -57,12 +51,13 @@ ul {
 }
 
 
+
 #all-books-list{
-  font-size: 40px;
+  font-size: 20px;
   display: flex;
+  background: #8AB282;
+  padding-bottom: 30px;
 }
-
-
 
 #title-link{
   text-decoration: none;
@@ -71,16 +66,24 @@ ul {
   align-content: center;
 }
 
-#author{
-  font-style: none;
-  text-decoration: none;
-}
-
 #title-tag{
   font-size: 100%;
   line-height: 50%;
   visibility: hidden;
 } 
+
+#title{
+  width: 90%;
+  height: auto;
+  text-align: center;
+}
+
+#authors-list{
+  width: 90%;
+  height: auto;
+  font-style: none;
+  text-decoration: none;
+}
 
 #total-reviews, #avg-score{
   font-style: bold;
@@ -91,20 +94,13 @@ ul {
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
+  width: 90%;
+  height: auto;
   font-size: 50%;
   visibility: visible;
 }
 
-.item1{
-  font-size: 30px;
-  width: 100%;
-  height: 200px;
-}
 
-.item2, .item3, .item4, .item5, .item6{
-  width: 100%;
-  height: 200px;
-}
 
 a, #create-book-link{
   color: rgb(141, 114, 114);
@@ -114,13 +110,60 @@ a, #create-book-link{
   padding: 1px;
 }
 
-a:hover, #create-book-link:hover{
-  font-size: 30px;
+a:hover{
   color: blue;
+}
+
+#create-book-link:hover{
+  font-size: 31px;
+  color: red;
 }
 
 #length-sort-links{
   align-items: center;
+}
 
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+  float: right; 
+}
+
+.sorting-link{
+  font-size: 50px;
+  font-family: monospace;
+  color: #891012;
+  margin: 20px;
+  width: 220px;
+}
+
+#link-bar{
+  display: flex;
 }
 
