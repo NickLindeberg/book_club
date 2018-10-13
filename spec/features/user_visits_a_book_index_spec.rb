@@ -15,7 +15,7 @@ describe 'user visits book index' do
     within("#year-written-#{book_1.id}") do
       expect(page).to have_content(1947)
     end
-    within("#author-#{book_1.id}") do
+    within("#authors-list-1") do
       expect(page).to have_content("Mary Sue")
     end
 
@@ -26,7 +26,7 @@ describe 'user visits book index' do
     within("#year-written-#{book_2.id}") do
       expect(page).to have_content(1965)
     end
-    within("#author-#{book_2.id}") do
+    within("#authors-list-2") do
       expect(page).to have_content("Mary Sue")
     end
   end
