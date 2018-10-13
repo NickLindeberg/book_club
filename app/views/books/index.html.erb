@@ -52,16 +52,19 @@
           </div>
         </li>
 
-        <% b.authors.each do |a| %>
         <li>
           <div class="grid-item item2">
             <span id="author-tag">Author:</span><br>
-            <div id="author-<%= b.id %>">
-              <%= link_to a.name, author_path(a), id: 'author-link' %>
-            </div>
+              
+              <div>
+              <% b.authors.each do |a| %>
+                <span id="author-<%= b.id %>"> 
+                  <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
+                </span>
+              <% end %>
+              </div>
           </div>
         </li>
-        <% end %>
 
         <li>
           <div class="grid-item item3">
@@ -75,7 +78,7 @@
         <li>
           <div class="grid-item item4">
             <span id="avg-score-tag">Average Rating:</span> <br>
-            <div id="avg-score"><%= b.reviews.avg_score %> stars</div>
+            <div id="avg-score"><%= b.reviews.avg_score %> n/a </div>
           </div>
         </li>
 
