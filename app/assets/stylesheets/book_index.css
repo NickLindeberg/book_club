@@ -14,38 +14,6 @@ body{
   background: #645A50;
 }
 
-.grid-container {
-  display: grid;
-  grid-column-gap: 0px;
-  grid-template-columns: auto auto auto;
-  background-color: #9E8553;
-  margin: 20px;
-}
-
-.grid-item {
-  background-color: #485678;
-  padding: 10px;
-  font-size: 100%;
-  size: 50px;
-  text-align: center;
-  align-content: center;
-  box-sizing: border-box;
-  text-decoration: none;
-  margin: 40px;
-  border: papayawhip;
-}
-
-#sorting-menu{
-  margin: 10px;
-}
-
-.nav-grid{
-  color: #485678;
-  margin: 1px;
-  border-style: solid;
-  border: transparent; 
-}
-
 h1{
   color: #9E8553;
   text-align: center;
@@ -59,7 +27,7 @@ ul {
 
 
 #all-books-list{
-  font-size: 40px;
+  font-size: 20px;
   display: flex;
 }
 
@@ -96,16 +64,7 @@ ul {
   visibility: visible;
 }
 
-.item1{
-  font-size: 30px;
-  width: 100%;
-  height: 200px;
-}
 
-.item2, .item3, .item4, .item5, .item6{
-  width: 100%;
-  height: 200px;
-}
 
 a, #create-book-link{
   color: rgb(141, 114, 114);
@@ -122,7 +81,6 @@ a:hover, #create-book-link:hover{
 
 #length-sort-links{
   align-items: center;
-
 }
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -168,3 +126,4 @@ h1 { font-size: 1.5em; margin: 10px; }
 #link-bar{
   display: flex;
 }
+

@@ -3,7 +3,8 @@
 }
 
 #author-name{
-  font-size: 400%;
+  font-size: 600%;
+  padding: 5%;
 }
 
 #other-books{
@@ -31,3 +32,9 @@
   margin: 50px;
 }
 
+#add-review-link{
+  font-size: 100%;
+  font-family: monospace;
+  margin: 20px;
+  width: 300px;
+}

@@ -1,29 +1,28 @@
-<!--SORTING LINKS -->
-    <span id="link-bar">
-      <div class="sorting-link">
-        <a href="#">Highest Average</a>
-      </div>
+<span id="link-bar">
+  <div class="sorting-link">
+    <a href="#">Highest Average</a>
+  </div>
 
-      <div class="sorting-link">
-        <a href="#">Lowest Average</a>
-      </div>
+  <div class="sorting-link">
+    <a href="#">Lowest Average</a>
+  </div>
 
-      <div class="sorting-link">
-        <a href="#">Longest</a>
-      </div>
+  <div class="sorting-link">
+    <a href="#">Longest</a>
+  </div>
 
-      <div class="sorting-link">
-          <a href="#">Shortest</a>
-      </div>
+  <div class="sorting-link">
+      <a href="#">Shortest</a>
+  </div>
 
-      <div class="sorting-link">
-        <a href="#">Most Reviews</a>
-      </div>
+  <div class="sorting-link">
+    <a href="#">Most Reviews</a>
+  </div>
 
-      <div class="sorting-link">
-        <a href="#">Fewest Reviews</a>
-      </div>
-    </span>
+  <div class="sorting-link">
+    <a href="#">Fewest Reviews</a>
+  </div>
+</span>
 <!--SORTING LINKS -->
 
 <h1>All The Books</h1>
@@ -31,46 +30,47 @@
 <div class="link-wrapper" id="create-book-link-wrapper">
   <%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
 </div>
+<!-- CREATE BOOK LINK -->
+
   
   <% @books.each do |b| %>
-      <ul id="all-books-list">
-        <li>
-          <span id="title-tag">Title:</span>
-            <div id="title">
-              <%= link_to b.title, book_path(b), id: 'title-link' %>
-            </div>
-        </li>
+    <ul id="all-books-list">
+      <li>
+        <span id="title-tag">Title:</span>
+        <div id="title">
+          <%= link_to b.title, book_path(b), id: 'title-link' %>
+        </div>
+      </li>
 
-        <li>
-          <span id="author-tag">Author:</span><br>
-          <div>
-            <% b.authors.each do |a| %>
-              <span id="author-<%= b.id %>"> 
-                <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
-              </span>
-            <% end %>
-          </div>
-        </li>
+      <li>
+        <span id="author-tag">Author:</span><br>
+        <div>
+          <% b.authors.each do |a| %>
+            <span id="author-<%= b.id %>"> 
+              <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
+            </span>
+          <% end %>
+        </div>
+      </li>
 
-        <li>
-          <span id="total-reviews-tag">Total Reviews:</span> <br>
-            <div id="total-reviews"><%= b.reviews.total_reviews %></div>
-        </li>
+      <li>
+        <span id="total-reviews-tag">Total Reviews:</span> <br>
+          <div id="total-reviews"><%= b.reviews.total_reviews %></div>
+      </li>
 
-        <li>
-          <span id="avg-score-tag">Average Rating:</span> <br>
-          <div id="avg-score"><%= b.reviews.avg_score %> n/a </div>
-        </li>
+      <li>
+        <span id="avg-score-tag">Average Rating:</span> <br>
+        <div id="avg-score"><%= b.reviews.avg_score %> n/a </div>
+      </li>
 
-        <li>
-          <span id="num-pages-tag">Number of Pages:</span> <br>
-          <div id="num-pages-<%= b.id %>"><%= b.pages %> pages</div>
-        </li>
+      <li>
+        <span id="num-pages-tag">Number of Pages:</span> <br>
+        <div id="num-pages-<%= b.id %>"><%= b.pages %> pages</div>
+      </li>
 
-        <li>
-          <span id="year-written-tag">Published:</span>
-          <div id="year-written-<%= b.id %>"><%= b.year %></div>
-        </li>
-
-      </ul>
+      <li>
+        <span id="year-written-tag">Published:</span>
+        <div id="year-written-<%= b.id %>"><%= b.year %></div>
+      </li>
+    </ul>
   <% end %>
