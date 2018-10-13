@@ -2,11 +2,13 @@
   font-size: 30px;
 }
 
-
-
 #author-name{
-  font-size: 200%;
+  font-size: 400%;
+}
 
+#other-books{
+  font-style: oblique;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #all-authors-div{

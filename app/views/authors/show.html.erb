@@ -11,7 +11,9 @@
 </div>
 
 
-<div>Books by:
+<div>
+<span id="other-books">other books by author:</span>
+
   <% @author.books.each do |book| %>
   <div>
     <%= link_to "#{book.title}", book_path(book) %>
