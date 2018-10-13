@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 
 #create-book-link{
   font-size: 50px;
@@ -8,6 +12,27 @@
   color: #891012;
   margin: 20px;
   width: 220px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
 }
 
 body{
@@ -26,12 +51,12 @@ ul {
 }
 
 
+
 #all-books-list{
   font-size: 20px;
   display: flex;
+  background: #8AB282;
 }
-
-
 
 #title-link{
   text-decoration: none;
@@ -40,16 +65,24 @@ ul {
   align-content: center;
 }
 
-#author{
-  font-style: none;
-  text-decoration: none;
-}
-
 #title-tag{
   font-size: 100%;
   line-height: 50%;
   visibility: hidden;
 } 
+
+#title{
+  width: 500px;
+  height: auto;
+  text-align: center;
+}
+
+#authors-list{
+  width: 200px;
+  height: 200px;
+  font-style: none;
+  text-decoration: none;
+}
 
 #total-reviews, #avg-score{
   font-style: bold;
@@ -60,6 +93,8 @@ ul {
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
+  width: 200px;
+  height: auto;
   font-size: 50%;
   visibility: visible;
 }
@@ -74,9 +109,13 @@ a, #create-book-link{
   padding: 1px;
 }
 
-a:hover, #create-book-link:hover{
-  font-size: 30px;
+a:hover{
   color: blue;
+}
+
+#create-book-link:hover{
+  font-size: 31px;
+  color: red;
 }
 
 #length-sort-links{
