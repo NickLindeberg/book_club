@@ -1,6 +1,10 @@
 #delete-review-link{
   float: right;
 }
-#review-entry{
+.review-entry{
   padding-bottom: 50px;
+  margin: 10px 10px;
+}
+.description-entry{
+  font-size: 120%;
 }

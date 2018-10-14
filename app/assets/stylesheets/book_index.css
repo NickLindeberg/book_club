@@ -29,6 +29,16 @@ a:hover{
   color: blue;
 }
 
+.book-entry{
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  width: 100%;
+  align-items: center;
+}
+
+li {
+  padding-bottom: 20px;
+}
 
 /* PAGE ACTIONS */
 #create-book-link-wrapper, #write-review-link-wrapper{
@@ -107,9 +117,9 @@ a:hover{
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
-  width: 90%;
+  width: 100%;
   height: auto;
-  font-size: 50%;
+  font-size: 100%;
   visibility: visible;
 }
 
@@ -117,6 +127,11 @@ a:hover{
 #length-sort-links{
   align-items: center;
 }
+
+.info-box{
+  width: 50%;
+}
+
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
@@ -161,4 +176,5 @@ h1 { font-size: 1.5em; margin: 10px; }
 #link-bar{
   display: flex;
 }
+
 

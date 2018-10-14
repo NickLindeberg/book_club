@@ -5,10 +5,11 @@
 <h1>USER PAGE</h1>
 
 <% @reviews.each do |r| %>
-<div id="review-entry">
+<div class="review-entry">
+  
   <%= r.score  %>/5  |  
-  <%= r.title  %>
-  <div>
+  <em><%= r.title  %></em>
+  <div class= "description-entry">
   <%= r.description  %>
   </div>
   <span id="delete-review-link"><%= link_to "Delete", user_review_path(r.user_id, r), method: 'delete'%></span>
