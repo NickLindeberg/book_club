@@ -53,4 +53,21 @@ describe 'User visits author show page' do
     expect(page).to have_content(book_1.title)
   end
 
+  it 'displays main author and coauthors in different fields' do
+    author_1 = Author.create(name: "Mary Sue")
+    author_2 = Author.create(name: "Freddi Sue")
+    book_1 = Book.create(title: "A book about Joe", pages: 430, year: 1947)
+    book_1.authors = [author_1, author_2]
+
+    visit author_path(author_1)
+
+    within('#author-name') do
+      expect(page).to have_content(author_1.name)
+    end
+    within('.co-authors') do
+      expect(page).to have_content(author_2.name)
+      expect(page).to_not have_content(author_1.name)
+    end
+  end
+
 end 
