@@ -5,10 +5,10 @@ class Review < ApplicationRecord
   belongs_to :book
 
   def self.total_reviews
-      Review.count
+    Review.count
   end
 
   def self.avg_score
-      average(:score)
+    average(:score)
   end
 end
