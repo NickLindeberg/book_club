@@ -1,6 +1,14 @@
-Create New Review for
 
+<div class="link-wrapper" id="all-books-link-wrapper">
+    <%= link_to "All Books", books_path %>
+</div>
 
+<h1>REVIEW</h1>
+
+<!-- TO DO: 
+    - generate the heading:
+    - "Write a review for #{book}"
+-->
 
 <%= form_for @review do |r| %>
 <%= r.hidden_field :book_id, value: @book.id %>
@@ -16,6 +24,7 @@ Create New Review for
 </div>
 
 <div>
+
   <%= r.label :score %>
   <%= r.number_field :score, min: 1, max: 5 %>
 
