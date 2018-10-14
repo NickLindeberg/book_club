@@ -5,11 +5,18 @@
 #author-name{
   font-size: 600%;
   padding: 5%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
 }
 
 #other-books{
   font-style: oblique;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#all-books-link-wrapper{
+  margin: 20px;
+  width: 220px;
 }
 
 #all-authors-div{

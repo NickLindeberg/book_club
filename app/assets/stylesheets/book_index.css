@@ -51,13 +51,12 @@ a:hover{
   float: left;
   display: block;
   text-align: center;
-  padding: 14px 16px;
+  padding: auto auto;
   text-decoration: none;
 }
 .topnav a:hover {
   background-color: #ddd;
 }
-
 
 
 
@@ -108,8 +107,6 @@ a:hover{
   font-size: 50%;
   visibility: visible;
 }
-
-
 
 
 #length-sort-links{

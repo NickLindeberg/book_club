@@ -1,12 +1,8 @@
-<title>
-  <%= @author.name %>
-</title>
+<div class="link-wrapper" id="all-books-link-wrapper">
+    <%= link_to "All Books", books_path %>
+</div>
 
 <h1>AUTHOR</h1>
-
-<div>
-  <%= link_to "All Books", books_path %>
-</div>
 
 <div id="author-name">
   <%= @author.name %>
