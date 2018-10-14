@@ -8,7 +8,5 @@ class Book < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   def self.average_rating_asc
-    Book.joins(:reviews).merge(Review.score, priority: :desc)
-    # Reviews.order(score: :asc)
   end
 end

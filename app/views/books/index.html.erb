@@ -22,35 +22,35 @@
 </span>
 <!-- CREATE BOOK LINK -->
 
+<% @books.each do |b| %>
+  <ul class="all-books-list">
+    <li>
+      <div id="book-headline">
 
-  <% @books.each do |b| %>
-    <ul class="all-books-list">
-      <li>
-        <div id="book-headline">
-
-          <div id="title"><%= link_to b.title, book_path(b), id: 'title-link' %>
-          </div>
-        
-          <div id="authors">
-            <% b.authors.each do |a| %>
-            <span id="authors-list-<%= b.id %>">
-              <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
-            </span>
-            <% end %>
-          </div>
+        <div id="title"><%= link_to b.title, book_path(b), id: 'title-link' %>
+        </div>
+      
+        <div id="authors">
+          <% b.authors.each do |a| %>
+          <span id="authors-list-<%= b.id %>">
+            <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
+          </span>
+          <% end %>
+        </div>
 
         <span id="total-reviews-tag">Total Reviews:</span> 
-        <span id="total-reviews"><%= b.reviews.total_reviews %></span>
+        <span id="total-reviews-<%= b.id %>"><%= b.reviews.total_reviews %></span>
       
         <span id="avg-score-tag">Average Rating:</span> 
-        <span id="avg-score"><%= b.reviews.avg_score %></span>
+        <span id="avg-score-<%= b.id %>"><%= b.reviews.avg_score %></span>
       
         <span id="num-pages-tag">Number of Pages:</span> 
         <span id="num-pages-<%= b.id %>"><%= b.pages %> pages</span>
       
         <span id="year-written-tag">Published:</span>
         <span id="year-written-<%= b.id %>"><%= b.year %></span>
-        </div>
-      </li>
-    </ul>
-  <% end %>
+
+      </div>
+    </li>
+  </ul>
+<% end %>

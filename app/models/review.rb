@@ -9,6 +9,6 @@ class Review < ApplicationRecord
   end
 
   def self.avg_score
-    average(:score)
+    @avg = average(:score)
   end
 end

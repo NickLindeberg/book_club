@@ -4,7 +4,13 @@
 
 
 .book-headline{
-  /* width: auto; */
+  width: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
 }
 
 
@@ -42,3 +48,6 @@
   margin: 50px;
 }
 
+#book-title{
+  overflow-wrap: break-word;
+}
