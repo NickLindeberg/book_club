@@ -2,29 +2,6 @@
   font-size: 30px;
 }
 
-.book-headline{
-  width: auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;`
-}
-
-.all-books-div{
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  border: 1px solid silver;
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-}
 
 #all-books-link{
   color: #5F050E;
@@ -41,7 +18,7 @@
   margin: 50px;
 }
 
-#book-title{
+.book-title{
   overflow-wrap: break-word;
   font-size: 200%;
   padding: 5%;
