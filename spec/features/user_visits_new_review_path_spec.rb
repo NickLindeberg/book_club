@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'user visits book show' do
-  xit 'shows a link to create a new review' do
+  it 'shows a link to create a new review' do
     author_1 = Author.create(name: "Mary Sue")
     book_1 = author_1.books.create!(title: "A book about Joe", pages: 430, year: 1947)
 
@@ -18,7 +18,7 @@ describe 'user visits book show' do
     new_review = Review.last
     expect(current_path).to eq(book_path(book_1))
     expect(page).to have_content(new_review.title)
-    expect(page).to have_content(new_review.user)
+    expect(page).to have_content(new_review.user.name)
     expect(page).to have_content(new_review.score)
     expect(page).to have_content(new_review.description)
   end
