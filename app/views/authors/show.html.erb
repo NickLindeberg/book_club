@@ -19,6 +19,14 @@
   <div>
     <%= link_to "#{book.title}", book_path(book) %>
   </div>
+    <% book.authors.each do |author| %>
+    <span>
+      <% if @author.name != author.name %>
+      Co-authored by:
+      <%= author.name %>
+      <% end %>
+    </span>
+    <% end %>
     <span>
       <%= book.pages %> pages |
       published in <%= book.year %>
