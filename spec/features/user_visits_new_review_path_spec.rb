@@ -22,4 +22,16 @@ describe 'user visits book show' do
     expect(page).to have_content(new_review.score)
     expect(page).to have_content(new_review.description)
   end
+
+  it 'renders new review form if fields are incomplete' do
+    author_1 = Author.create(name: "Mary Sue")
+    book_1 = author_1.books.create!(title: "A book about Joe", pages: 430, year: 1947)
+
+    visit book_path(book_1) 
+
+    click_link "Write a Review"
+    click_button "Create Review"
+
+    expect(current_path).to eq(reviews_path)
+  end
 end

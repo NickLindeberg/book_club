@@ -14,8 +14,10 @@ class BooksController < ApplicationController
 
   def create
     @authors = params[:author_names]
+    @title = book_params[:title].titleize
     @book = Book.create(book_params)
-
+    @book.title = @title
+    
     if @book.save
       @authors.split(", ").each do |author_name|
         author_name.chomp
