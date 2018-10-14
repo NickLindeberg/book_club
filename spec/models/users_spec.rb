@@ -7,5 +7,6 @@ describe User, type: :model do
 
   describe 'Relationships' do
     it {should have_many(:reviews)}
+    
   end
 end

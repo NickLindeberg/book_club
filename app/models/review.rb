@@ -4,6 +4,8 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :book
 
+  has_many :authors, through: :book
+
   def self.total_reviews
     Review.count
   end
