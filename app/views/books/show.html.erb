@@ -5,7 +5,6 @@
 <h1>BOOK</h1>
 
 <div class="container">
-
   <div class="book-entry">
 
     <div id="book-title"><%= @book.title %></div>
@@ -30,12 +29,20 @@
 </div>
 
 <div id="book-reviews">Reviews:
+
   <% @book.reviews.each do |r| %>
-  <%= link_to r.user.name, user_reviews_path(r.user_id)%>
-  <%= r.title %>
-  <%= r.description %>
-  <%= r.score %>
+  <div>
+    <div>
+    <b><%= r.score %>/5</b> |
+    <span><em><%= r.title %></em></span>
+      <div>
+      <%= r.description %>
+    --<%= link_to "#{r.user.name}", user_reviews_path(r.user_id)%>
+      </div>
+    </div>
+  </div>
   <% end %>
+
 </div>
 
 <div id="add-review-link">
