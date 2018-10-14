@@ -2,7 +2,15 @@
   <%= link_to "All Books", books_path %>
 </div>
 
-<h1>USER PAGE</h1>
+<h1>REVIES for USER</h1>
+
+<div class="link-wrapper" id="newest-link-wrapper">
+    <%= link_to "Newest", books_path %>
+</div>
+
+<div class="link-wrapper" id="oldest-link-wrapper">
+    <%= link_to "Oldest", books_path %>
+</div>
 
 <% @reviews.each do |r| %>
 <div class="review-entry">

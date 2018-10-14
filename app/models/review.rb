@@ -13,4 +13,13 @@ class Review < ApplicationRecord
   def self.avg_score
     @avg = average(:score)
   end
+
+  def self.newest
+    Review.order("created_at DESC")
+  end
+
+  def self.oldest
+    Review.order("created_at ASC")
+  end
+
 end
