@@ -15,8 +15,6 @@
     <%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
   </div>
 
-  
-
 </span>
 <!-- CREATE BOOK LINK -->
 
@@ -33,13 +31,13 @@
         <% end %>
       
         <div class="info-box">
-          <span class="total-reviews">Total Reviews: <%= b.reviews.total_reviews %></span>
+          <span id="total-reviews-<%= b.id %>">Total Reviews: <%= b.reviews.total_reviews %></span>
           <br>
-          <span id="avg-score">Average Rating: <%= b.reviews.avg_score %></span>
+          <span id="avg-score-<%= b.id %>">Average Rating: <%= b.reviews.avg_score %></span>
           <br>
-          <span id="num-pages">Number of Pages: <%= b.pages %> pages</span>
+          <span id="num-pages-<%= b.id %>">Number of Pages: <%= b.pages %> pages</span>
           <br>
-          <span id="year-written">Published: <%= b.year %></span>
+          <span id="year-written-<%= b.id %>">Published: <%= b.year %></span>
         
         </div>
       </div>

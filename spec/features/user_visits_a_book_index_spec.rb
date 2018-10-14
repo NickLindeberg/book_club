@@ -9,10 +9,10 @@ describe 'user visits book index' do
     visit books_path
 
     expect(page).to have_content(book_1.title)
-    within("#num-pages-#{book_1.id}") do
+    within("#num-pages-1") do
       expect(page).to have_content(430)
     end
-    within("#year-written-#{book_1.id}") do
+    within("#year-written-1") do
       expect(page).to have_content(1947)
     end
     within("#authors-list-1") do
@@ -40,11 +40,11 @@ describe 'user visits book index' do
 
     visit books_path
 
-    within(".total-reviews") do
-      expect(page).to have_content(2)
+    within("#total-reviews-#{book_1.id}") do
+      expect(page).to have_content("Total Reviews: 2")
     end
-    within(".avg-score") do
-      expect(page).to have_content(3)
+    within("#avg-score-#{book_1.id}") do
+      expect(page).to have_content("Average Rating: 3")
     end
   end
 end
