@@ -8,6 +8,9 @@
   <%= @author.name %>
 </div>
 
+<i class="fa fa-trash"></i>
+<%= link_to "Delete", author_path(@author), method: "delete", id: "delete-author-link" %>
+
 
 <div>
 <span id="other-books">other books by author:</span>
@@ -20,6 +23,8 @@
       <%= book.pages %> pages |
       published in <%= book.year %>
     </span>
+
+</div>
 
   <% end %>
 </div>

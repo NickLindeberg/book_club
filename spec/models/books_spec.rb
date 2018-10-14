@@ -14,7 +14,7 @@ describe Book, type: :model do
   end
 
   describe 'Class Methods' do
-    it '.average_rating_asc' do
+    xit '.average_rating_asc' do
       user_1 = User.create(name: "Joey Fatone")
       author_1 = Author.create(name: "Mary Sue")
 
