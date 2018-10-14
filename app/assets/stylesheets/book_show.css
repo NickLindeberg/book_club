@@ -2,15 +2,6 @@
   font-size: 30px;
 }
 
-#book-title{
-  font-size: 200%;
-  width: 400px;
-}
-
-#all-books-div{
-  margin: 50px;
-  width: auto;
-}
 
 #all-books-link{
   color: #5F050E;
@@ -27,3 +18,9 @@
   margin: 50px;
 }
 
+.book-title{
+  overflow-wrap: break-word;
+  font-size: 200%;
+  padding: 5%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

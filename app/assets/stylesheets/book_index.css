@@ -1,53 +1,84 @@
 * {
   box-sizing: border-box;
 }
-
-
-#create-book-link{
-  font-size: 50px;
-  font-family: monospace
-}
-
-#create-book-link-wrapper{
-  color: #891012;
-  margin: 20px;
-  width: 220px;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-  
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-}
-
 body{
   background: #645A50;
 }
-
 h1{
   color: #9E8553;
   text-align: center;
   margin: 0px;
   width: 100%;
+  font-size: 200%;
 }
-
 ul {
   list-style: none;
+}
+
+/* LINK STYLES */
+a, #create-book-link, #write-review-link{
+  font-size: 50px;
+  font-family: monospace;
+  color: rgb(141, 114, 114);
+  font-size: 30px;
+  padding: 0px;
+  text-decoration: none;
+  padding: 1px;
+}
+a:hover{
+  color: blue;
+}
+
+.book-entry{
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  width: 100%;
+  align-items: center;
+  width: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  
+}
+
+li {
+  padding-bottom: 20px;
+}
+
+/* PAGE ACTIONS */
+#create-book-link-wrapper, #write-review-link-wrapper{
+  color: #891012;
+  margin: 20px;
+  width: 220px;
+}
+
+#create-book-link:hover, #write-review-link:hover{
+  color: red;
+}
+
+#actions{
+  display: flex;
+}
+
+
+/* TOPNAV SORT LINKS */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  align-content: center;
+}
+.topnav a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+.topnav a:hover {
+  background-color: #ddd;
 }
 
 
@@ -94,34 +125,21 @@ ul {
 #avg-score-tag, 
 #num-pages-tag, 
 #year-written-tag{
-  width: 90%;
+  width: 100%;
   height: auto;
-  font-size: 50%;
+  font-size: 100%;
   visibility: visible;
 }
 
 
-
-a, #create-book-link{
-  color: rgb(141, 114, 114);
-  font-size: 30px;
-  padding: 0px;
-  text-decoration: none;
-  padding: 1px;
-}
-
-a:hover{
-  color: blue;
-}
-
-#create-book-link:hover{
-  font-size: 31px;
-  color: red;
-}
-
 #length-sort-links{
   align-items: center;
 }
+
+.info-box{
+  width: 50%;
+}
+
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
@@ -166,4 +184,5 @@ h1 { font-size: 1.5em; margin: 10px; }
 #link-bar{
   display: flex;
 }
+
 

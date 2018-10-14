@@ -6,4 +6,7 @@ class Book < ApplicationRecord
   has_many :book_authors
   has_many :authors, through: :book_authors, dependent: :destroy
   has_many :reviews, dependent: :destroy
+
+  def self.average_rating_asc
+  end
 end

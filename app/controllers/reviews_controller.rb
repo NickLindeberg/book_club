@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
       redirect_to book_path(@review.book)
     else
       redirect_to new_review_path
-   end
+    end
   end
 
   def destroy

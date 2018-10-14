@@ -40,10 +40,10 @@ describe 'user visits book index' do
 
     visit books_path
 
-    within("#total-reviews") do
+    within(".total-reviews") do
       expect(page).to have_content(2)
     end
-    within("#avg-score") do
+    within(".avg-score") do
       expect(page).to have_content(3)
     end
   end
