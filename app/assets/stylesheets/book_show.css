@@ -50,4 +50,7 @@
 
 #book-title{
   overflow-wrap: break-word;
+  font-size: 300%;
+  padding: 5%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
