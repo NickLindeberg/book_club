@@ -7,18 +7,17 @@ describe 'user visits book index' do
 
     click_link "Create Book"
     expect(current_path).to eq(new_book_path)
-    fill_in 'book[title]', with: 'Joy'
-    fill_in 'author_names', with: 'Dr. Nick, Geoff Adebonojo'
+    fill_in 'book[title]', with: 'joy'
+    fill_in 'author_names', with: 'Nick Lindy, Geoff Adebonojo'
     fill_in 'book[pages]', with: 900
     fill_in 'book[year]', with: 2000
     click_button "Create Book"
-    
     new_book = Book.last
     expect(current_path).to eq(book_path(new_book))
-    expect(page).to have_content(new_book.title)
+    expect(page).to have_content('Joy')
     expect(page).to have_content(new_book.pages)
     expect(page).to have_content(new_book.year)
-    expect(page).to have_content('Dr. Nick')
+    expect(page).to have_content('Nick Lindy')
     expect(page).to have_content('Geoff Adebonojo')
     
   end
@@ -31,6 +30,5 @@ describe 'user visits book index' do
 
     expect(current_path).to eq(new_book_path)
   end
-
 
 end
