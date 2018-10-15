@@ -16,8 +16,8 @@ require 'faker'
       year: Faker::Number.between(1980, 2015))
     3.times do
       user = User.create(name: Faker::Simpsons.character )
-      book_1.reviews.create(title: Faker::Lorem.sentence(5).to_s, description: Faker::ChuckNorris.fact, score: Faker::Number.between(1, 5), user: user)
-      book_2.reviews.create(title: Faker::Lorem.sentence(5).to_s, description: Faker::ChuckNorris.fact, score: Faker::Number.between(1, 5), user: user)
-      book_3.reviews.create(title: Faker::Lorem.sentence(5).to_s, description: Faker::ChuckNorris.fact, score: Faker::Number.between(1, 5), user: user)
+      book_1.reviews.create(title: Faker::Lorem.sentence(5).to_s, description: Faker::ChuckNorris.fact, score: Faker::Number.between(1, 5), user: user, created_at: "2018-06-11")
+      book_2.reviews.create(title: Faker::Lorem.sentence(5).to_s, description: Faker::ChuckNorris.fact, score: Faker::Number.between(1, 5), user: user, created_at: "2018-07-11")
+      book_3.reviews.create(title: Faker::Lorem.sentence(5).to_s, description: Faker::ChuckNorris.fact, score: Faker::Number.between(1, 5), user: user, created_at: "2018-08-11")
   end
 end

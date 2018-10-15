@@ -2,6 +2,11 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.where("user_id = ?", params[:user_id])
+    if params[:sort] == "newest"
+      @reviews = @reviews.newest
+    elsif params[:sort] == "oldest"
+      @reviews = @reviews.oldest
+    end
   end
 
   def new

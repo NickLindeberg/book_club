@@ -9,32 +9,35 @@
 </div>
 
 <i class="fa fa-trash"></i>
-<%= link_to "Delete", author_path(@author), method: "delete", id: "delete-author-link" %>
+<%= link_to "Delete", author_path(@author), method: "delete", id: "delete-author-link" %> <br>
 
-
-<div>
 <span id="other-books">other books by author:</span>
 
+
   <% @author.books.each do |book| %>
-  <div>
+  <div class="book-info">
+  
     <%= link_to "#{book.title}", book_path(book) %>
-  </div>
+
     <% book.authors.each do |author| %>
-    <div>
-      <% if @author.name != author.name %>
-      Co-authored by:
-      <span class="co-authors">
-        <%= author.name %>
-      </span>
-      <% end %>
-    </div>
+      <div>
+        <% if @author.name != author.name %>
+        
+        Co-authored by:
+        <span class="co-authors">
+          <%= link_to author.name, author_path(author), id: 'name-link' %>
+        </span>
+        <% end %>
+      </div>
     <% end %>
+
     <span>
       <%= book.pages %> pages |
       published in <%= book.year %>
     </span>
 
-</div>
+  </div>
+
 
   <% end %>
 </div>

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+
+  #! TODO: consider nesting 
+  #! reviews#create, reviews#new
+  #! inside of :books
+
   resources :books, only: [:index, :show, :destroy, :create, :new]
 
   resources :authors, only: [:show, :destroy]
