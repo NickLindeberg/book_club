@@ -10,6 +10,25 @@
 
 <h1>All The Books</h1>
 
+<div id="highest-rated">
+  <% @three_highest.each do |th| %>
+    <%= th.title %>
+  <% end %>
+</div>
+
+<div id="lowest-rated">
+  <% @three_lowest.each do |tl| %>
+    <%= tl.title %>
+  <% end %>
+</div>
+
+<div id="top-users">
+  <% @three_top_users.each do |tu| %>
+  <%= tu.name %>
+  <% end %>
+</div>
+
+
 <span id="actions">
   <div class="link-wrapper" id="create-book-link-wrapper">
     <%= link_to "Create Book", new_book_path, id: 'create-book-link' %>
@@ -29,7 +48,7 @@
           <%= link_to a.name, author_path(a), id: 'author-link' %> </br>
         </span>
         <% end %>
-      
+
         <div class="info-box">
           <span id="total-reviews-<%= b.id %>">Total Reviews: <%= b.reviews.total_reviews %></span>
           <br>
@@ -38,7 +57,7 @@
           <span id="num-pages-<%= b.id %>">Number of Pages: <%= b.pages %> pages</span>
           <br>
           <span id="year-written-<%= b.id %>">Published: <%= b.year %></span>
-        
+
         </div>
       </div>
     </li>
