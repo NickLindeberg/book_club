@@ -6,6 +6,11 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @reviews = Review.where("book_id = ?", params[:book_id])
+
+    @highest_reviews = @book.highest_rated_reviews
+    @lowest_reviews = @book.lowest_rated_reviews
+    @average = @book.average_rating
   end
 
   def new

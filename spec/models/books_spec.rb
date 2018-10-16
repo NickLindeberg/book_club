@@ -34,4 +34,36 @@ describe Book, type: :model do
       expect(sorted_books).to eq([book_1, book_2, book_3])
     end
   end
+
+  describe 'Instance Methods' do
+    it '.lowest_rated_reviews' do
+      user_1 = User.create(name: "Joey Fatone")
+      author_1 = Author.create(name: "Mary Sue")
+
+      book_1 = author_1.books.create(title: "Joe, First", pages: 430, year: 1947)
+      review_1 = book_1.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 2, user: user_1)
+      review_2 = book_1.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 1, user: user_1)
+      review_3 = book_1.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
+      review_4 = book_1.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
+
+      lowest_rated = book_1.lowest_rated_reviews
+
+      expect(lowest_rated).to eq([review_2, review_1, review_3])
+    end
+
+    it '.highest_rated_reviews' do
+      user_1 = User.create(name: "Joey Fatone")
+      author_1 = Author.create(name: "Mary Sue")
+
+      book_1 = author_1.books.create(title: "Joe, First", pages: 430, year: 1947)
+      review_1 = book_1.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 2, user: user_1)
+      review_2 = book_1.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 1, user: user_1)
+      review_3 = book_1.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
+      review_4 = book_1.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
+
+      highest_rated = book_1.highest_rated_reviews
+
+      expect(highest_rated).to eq([review_4, review_3, review_1])
+    end
+  end
 end

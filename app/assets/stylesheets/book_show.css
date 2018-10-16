@@ -21,6 +21,11 @@
 #book-title{
   overflow-wrap: break-word;
   font-size: 200%;
-  padding: 5%;
+  padding: 0%;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+#stats-box{
+  margin: 30px;
+}
+
