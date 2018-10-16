@@ -85,6 +85,7 @@ describe Book, type: :model do
       expect(highest_three_books).to eq([book_4, book_2, book_3])
 
     end
+
   end
 
   describe 'Instance Methods' do

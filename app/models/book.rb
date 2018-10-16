@@ -11,7 +11,7 @@ class Book < ApplicationRecord
 
 
   def self.three_highest_rated_books
-    Book.select('books.*, avg(score) as avg_score, count(reviews) as review_count')
+    Book.select('books.*, avg(score) as avg_score')
     .joins(:reviews)
     .group(:book_id, :id)
     .order("avg_score DESC")
@@ -19,12 +19,13 @@ class Book < ApplicationRecord
   end
 
   def self.three_lowest_rated_books
-    Book.select('books.*, avg(score) as avg_score, count(reviews) as review_count')
+    Book.select('books.*, avg(score) as avg_score')
     .joins(:reviews)
     .group(:book_id, :id)
     .order("avg_score ASC")
     .first(3)
   end
+
 
   def self.average_rating_asc
   end

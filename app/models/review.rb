@@ -21,6 +21,4 @@ class Review < ApplicationRecord
   def self.newest
     Review.order("created_at ASC")
   end
-  
-
 end
