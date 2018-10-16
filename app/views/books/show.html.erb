@@ -3,9 +3,7 @@
 </div>
 
 <div class="container">
-
   <div id="book-title"><%= @book.title %></div>
-
   <div id="book-authors">Author:
   <% @book.authors.each do |a| %>
     <%= link_to a.name, author_path(a) %>&nbsp;&nbsp;&nbsp;
@@ -19,11 +17,31 @@
     <%= "Published: #{@book.year}" %>
   </div>
     
-
-</div>
-<i class="fa fa-trash"></i>
+  <i class="fa fa-trash"></i>
   <%= link_to "Delete", book_path(@book), method: "delete", id: "delete-book-link" %>
 </div>
+
+<div id="stats-box">
+  <h3>Book Statistics</h3>
+  <div>Overall average rating:
+    <span id="average-score"> <%= @average %> </span>
+  </div>
+
+
+  <div id="top-reviews">
+    <% @highest_reviews.each do |hr| %>
+      <p id="highest"><%= hr.title %> <%= hr.user.name %> <%= hr.score %></p>
+    <% end %>
+  </div>
+
+  <div id="bottom-reviews">
+    <% @lowest_reviews.each do |lr| %>
+      <p id="lowest"><%= lr.title %> <%= lr.user.name %> <%= lr.score %></p>
+    <% end %>
+  </div>
+</div>
+
+
 
 <div id="book-reviews">Reviews:
 
