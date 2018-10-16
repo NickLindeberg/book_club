@@ -14,25 +14,40 @@ describe Book, type: :model do
   end
 
   describe 'Class Methods' do
-    xit '.average_rating_asc' do
-      user_1 = User.create(name: "Joey Fatone")
+    # xit '.average_rating_asc' do
+    #   user_1 = User.create(name: "Joey Fatone")
+    #   author_1 = Author.create(name: "Mary Sue")
+    #
+    #   book_1 = author_1.books.create(title: "Joe, First", pages: 430, year: 1947)
+    #   review_1 = book_1.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 1, user: user_1)
+    #   review_2 = book_1.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 2, user: user_1)
+    #
+    #   book_2 = author_1.books.create(title: "Joe, Second", pages: 430, year: 1947)
+    #   review_3 = book_2.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
+    #   review_4 = book_2.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
+    #
+    #   book_3 = author_1.books.create(title: "Joe, Finale", pages: 430, year: 1947)
+    #   review_5 = book_3.reviews.create(title: "Joe Third is Good", description: "This book was really good...", score: 4, user: user_1)
+    #   review_6 = book_3.reviews.create(title: "Joe Third is my Favorite book", description: "This book is amazing it's the best thing...", score: 5, user: user_1)
+    #   sorted_books = Book.average_rating_asc
+    #
+    #   expect(sorted_books).to eq([book_1, book_2, book_3])
+    # end
+
+
+    it '.num_pages_DESC' do
       author_1 = Author.create(name: "Mary Sue")
+      book_1 = author_1.books.create(title: "Joe, I", pages: 430, year: 1947)
+      book_2 = author_1.books.create(title: "Joe, II", pages: 450, year: 1948)
+      book_3 = author_1.books.create(title: "Joe, III", pages: 500, year: 1949)
+      book_4 = author_1.books.create(title: "Joe, IV", pages: 600, year: 1950)
 
-      book_1 = author_1.books.create(title: "Joe, First", pages: 430, year: 1947)
-      review_1 = book_1.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 1, user: user_1)
-      review_2 = book_1.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 2, user: user_1)
-
-      book_2 = author_1.books.create(title: "Joe, Second", pages: 430, year: 1947)
-      review_3 = book_2.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
-      review_4 = book_2.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
-
-      book_3 = author_1.books.create(title: "Joe, Finale", pages: 430, year: 1947)
-      review_5 = book_3.reviews.create(title: "Joe Third is Good", description: "This book was really good...", score: 4, user: user_1)
-      review_6 = book_3.reviews.create(title: "Joe Third is my Favorite book", description: "This book is amazing it's the best thing...", score: 5, user: user_1)
-      sorted_books = Book.average_rating_asc
-
-      expect(sorted_books).to eq([book_1, book_2, book_3])
+      fewest_pages = Book.num_pages_DESC
+      expect(fewest_pages).to eq([book_4, book_3, book_2, book_1])
     end
+
+
+
 
     it '.three_highest_rated_books' do
       user_1 = User.create(name: "Joey Fatone")
@@ -119,4 +134,6 @@ describe Book, type: :model do
       expect(highest_rated).to eq([review_4, review_3, review_1])
     end
   end
+
+
 end

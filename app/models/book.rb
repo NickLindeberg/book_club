@@ -27,7 +27,8 @@ class Book < ApplicationRecord
   end
 
 
-  def self.average_rating_asc
+  def self.num_pages_DESC
+    Book.order('pages DESC')
   end
 
   def lowest_rated_reviews
