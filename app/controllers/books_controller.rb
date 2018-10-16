@@ -4,6 +4,9 @@ class BooksController < ApplicationController
     @books = Book.all
 
     @three_highest = Book.three_highest_rated_books
+    @three_lowest = Book.three_lowest_rated_books
+
+    @three_top_users = User.top_three_reviewers
   end
 
   def show
