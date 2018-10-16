@@ -47,4 +47,17 @@ describe 'user visits book index' do
       expect(page).to have_content("Average Rating: 3")
     end
   end
+
+  # xit 'shows stats about books'
+  # # As a visitor when i visit the book index page
+  #   do 'stats about all books'
+  #     # I see statistic about all books
+  #     within('#jumbotron') do
+  #       expect(page).to have_content(2)
+  #     end
+  # # Three of the highest-rated books
+  # # Three of the worst-rated books
+  # # Three users who have written the most reviews
+  #   end
+  # end
 end

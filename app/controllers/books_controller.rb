@@ -2,6 +2,8 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+
+    @three_highest = Book.three_highest_rated_books
   end
 
   def show
@@ -22,7 +24,7 @@ class BooksController < ApplicationController
     @title = book_params[:title].titleize
     @book = Book.create(book_params)
     @book.title = @title
-    
+
     if @book.save
       @authors.split(", ").each do |author_name|
         author_name.chomp
