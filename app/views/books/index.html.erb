@@ -3,8 +3,8 @@
   <a href="#">Lowest Rating</a>
   <%= link_to "Shortest", books_path(sort: "num_pages_ASC") %>
   <%= link_to "Longest", books_path(sort: "num_pages_DESC") %>
-  <a href="#">Most Reviews</a>
-  <a href="#">Fewest Reviews</a>
+  <%= link_to "Most Reviews", books_path(sort: "most_reviews") %>
+  <%= link_to "Fewest Reviews", books_path(sort: "fewest_reviews") %>
 </div>
 <!--SORTING LINKS -->
 

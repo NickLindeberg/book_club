@@ -5,10 +5,15 @@ class BooksController < ApplicationController
     @three_highest = Book.three_highest_rated_books
     @three_lowest = Book.three_lowest_rated_books
     @three_top_users = User.top_three_reviewers
+
     if params[:sort] == "num_pages_ASC"
       @books = @books.num_pages_ASC
-    else params[:sort] == "num_page_DESC"
+    elsif params[:sort] == "num_page_DESC"
       @books = @books.num_pages_DESC
+    elsif params[:sort] == "fewest_reviews"
+      @books = @books.fewest_reviews
+    else params[:sort] == "most_reviews"
+      @books = @books.most_reviews
     end
   end
 

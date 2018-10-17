@@ -112,6 +112,49 @@ describe Book, type: :model do
 
     end
 
+    it '.most_reviews' do
+      user_1 = User.create(name: "Joey Fatone")
+      author_1 = Author.create(name: "Mary Sue")
+
+      book_1 = author_1.books.create(title: "Joe, I", pages: 430, year: 1947)
+      book_2 = author_1.books.create(title: "Joe, II", pages: 430, year: 1947)
+      book_3 = author_1.books.create(title: "Joe, III", pages: 430, year: 1947)
+
+      review_1 = book_3.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 4, user: user_1)
+      review_2 = book_3.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 5, user: user_1)
+      review_3 = book_3.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
+
+      review_4 = book_2.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
+      review_5 = book_2.reviews.create(title: "Joe Third is Good", description: "This book was really good...", score: 3, user: user_1)
+
+      review_6 = book_1.reviews.create(title: "Joe Third is my Favorite book", description: "This book is amazing it's the best thing...", score: 5, user: user_1)
+
+      most_reviews = Book.most_reviews
+
+      expect(most_reviews).to eq([book_3, book_2, book_1])
+    end
+
+    it '.fewest_reviews' do
+      user_1 = User.create(name: "Joey Fatone")
+      author_1 = Author.create(name: "Mary Sue")
+
+      book_1 = author_1.books.create(title: "Joe, I", pages: 430, year: 1947)
+      book_2 = author_1.books.create(title: "Joe, II", pages: 430, year: 1947)
+      book_3 = author_1.books.create(title: "Joe, III", pages: 430, year: 1947)
+
+      review_1 = book_3.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 4, user: user_1)
+      review_2 = book_3.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 5, user: user_1)
+      review_3 = book_3.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
+
+      review_4 = book_2.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
+      review_5 = book_2.reviews.create(title: "Joe Third is Good", description: "This book was really good...", score: 3, user: user_1)
+
+      review_6 = book_1.reviews.create(title: "Joe Third is my Favorite book", description: "This book is amazing it's the best thing...", score: 5, user: user_1)
+
+      fewest_reviews = Book.fewest_reviews
+
+      expect(fewest_reviews).to eq([book_1, book_2, book_3])
+    end
   end
 
   describe 'Instance Methods' do

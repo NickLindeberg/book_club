@@ -35,6 +35,21 @@ class Book < ApplicationRecord
     Book.order('pages ASC')
   end
 
+  def self.most_reviews
+    Book.select('books.*, count(reviews) as review_count')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order("review_count DESC")
+  end
+
+  def self.fewest_reviews
+    Book.select('books.*, count(reviews) as review_count')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order("review_count ASC")
+  end
+
+
   def lowest_rated_reviews
     reviews.order(:score).limit(3)
   end
