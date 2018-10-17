@@ -12,9 +12,14 @@ class BooksController < ApplicationController
       @books = @books.num_pages_DESC
     elsif params[:sort] == "fewest_reviews"
       @books = @books.fewest_reviews
-    else params[:sort] == "most_reviews"
+    elsif params[:sort] == "most_reviews"
       @books = @books.most_reviews
+    elsif params[:sort] == "highest_rated"
+      @books = @books.highest_rated
+    else params[:sort] == "lowest_rated"
+      @books = @books.lowest_rated
     end
+
   end
 
   def show

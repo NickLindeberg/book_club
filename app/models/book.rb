@@ -49,6 +49,19 @@ class Book < ApplicationRecord
     .order("review_count ASC")
   end
 
+  def self.highest_rated
+    Book.select('books.*, avg(score) as avg_score')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order('avg_score DESC')
+  end
+
+  def self.lowest_rated
+    Book.select('books.*, avg(score) as avg_score')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order('avg_score ASC')
+  end
 
   def lowest_rated_reviews
     reviews.order(:score).limit(3)

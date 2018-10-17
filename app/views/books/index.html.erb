@@ -1,6 +1,6 @@
 <div class="topnav">
-  <a href="#">Highest Rating</a>
-  <a href="#">Lowest Rating</a>
+  <%= link_to "Highest Rating", books_path(sort: "highest_rated") %>
+  <%= link_to "Lowest Rating", books_path(sort: "lowest_rated") %>
   <%= link_to "Shortest", books_path(sort: "num_pages_ASC") %>
   <%= link_to "Longest", books_path(sort: "num_pages_DESC") %>
   <%= link_to "Most Reviews", books_path(sort: "most_reviews") %>
