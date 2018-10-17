@@ -47,13 +47,9 @@ describe 'user visits user show page' do
     review_2 = book_2.reviews.create(title: "Fish are better than Sharks", description: "Fish are friends", score: 3, user: user_1, created_at: "2018-08-13")
 
     visit user_reviews_path(user_1)
-    click_on("Newest")    
+    click_on("Newest")
     within("#created-at-5") do
       expect(page).to have_content(review_1.created_at.strftime("%m-%d-%Y"))
-    end
-
-    # click_on("Oldest")    
-    
-
+    end 
   end
 end
