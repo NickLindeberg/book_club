@@ -2,11 +2,24 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-
     @three_highest = Book.three_highest_rated_books
     @three_lowest = Book.three_lowest_rated_books
-
     @three_top_users = User.top_three_reviewers
+
+    if params[:sort] == "num_pages_ASC"
+      @books = @books.num_pages_ASC
+    elsif params[:sort] == "num_page_DESC"
+      @books = @books.num_pages_DESC
+    elsif params[:sort] == "fewest_reviews"
+      @books = @books.fewest_reviews
+    elsif params[:sort] == "most_reviews"
+      @books = @books.most_reviews
+    elsif params[:sort] == "highest_rated"
+      @books = @books.highest_rated
+    else params[:sort] == "lowest_rated"
+      @books = @books.lowest_rated
+    end
+
   end
 
   def show

@@ -1,10 +1,10 @@
 <div class="topnav">
-  <a href="#">Highest Average</a>
-  <a href="#">Lowest Average</a>
-  <a href="#">Longest</a>
-  <a href="#">Shortest</a>
-  <a href="#">Most Reviews</a>
-  <a href="#">Fewest Reviews</a>
+  <%= link_to "Highest Rating", books_path(sort: "highest_rated") %>
+  <%= link_to "Lowest Rating", books_path(sort: "lowest_rated") %>
+  <%= link_to "Shortest", books_path(sort: "num_pages_ASC") %>
+  <%= link_to "Longest", books_path(sort: "num_pages_DESC") %>
+  <%= link_to "Most Reviews", books_path(sort: "most_reviews") %>
+  <%= link_to "Fewest Reviews", books_path(sort: "fewest_reviews") %>
 </div>
 <!--SORTING LINKS -->
 
@@ -40,8 +40,8 @@
 <ul class="all-books-list">
   <% @books.each do |b| %>
     <li>
-      <div id="book-entry">
-        <div id="title"><%= link_to b.title, book_path(b), id: 'title-link' %></div>
+      <div class="book-entry">
+        <div id="title-<%= b.id %>"><%= link_to b.title, book_path(b), id: 'title-link' %></div>
 
         <% b.authors.each do |a| %>
         <span id="authors-list-<%= b.id %>">

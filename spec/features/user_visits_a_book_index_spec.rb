@@ -124,4 +124,50 @@ describe 'user visits book index' do
     end
   end
 
+  it 'sorts books by page number, highest/lowest' do
+    author_1 = Author.create(name: "Mary Sue")
+    book_1 = author_1.books.create(title: "Joe, I", pages: 430, year: 1947)
+    book_2 = author_1.books.create(title: "Joe, II", pages: 450, year: 1947)
+    book_3 = author_1.books.create(title: "Joe, III", pages: 470, year: 1947)
+
+    visit books_path
+    click_on "Longest"
+
+    expect(all('.book-entry')[0]).to have_content(book_3.title)
+
+    click_on "Fewest"
+    expect(all('.book-entry')[0]).to have_content(book_1.title)
+
+  end
+
+
+  it 'sorts books by number of reviews' do
+    user_1 = User.create(name: "Joey Fatone")
+    author_1 = Author.create(name: "Mary Sue")
+
+    book_1 = author_1.books.create(title: "Joe, I", pages: 430, year: 1947)
+    book_2 = author_1.books.create(title: "Joe, II", pages: 430, year: 1947)
+    book_3 = author_1.books.create(title: "Joe, III", pages: 430, year: 1947)
+
+    review_1 = book_1.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 4, user: user_1)
+    review_2 = book_1.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 5, user: user_1)
+    review_3 = book_1.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
+    review_4 = book_1.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
+
+    review_5 = book_2.reviews.create(title: "Joe Third is Good", description: "This book was really good...", score: 3, user: user_1)
+    review_6 = book_2.reviews.create(title: "Joe Third is my Favorite book", description: "This book is amazing it's the best thing...", score: 5, user: user_1)
+    review_7 = book_2.reviews.create(title: "This book is awesome", description: "This is poorly written...", score: 1, user: user_1)
+
+    review_8 = book_3.reviews.create(title: "Joe Third is my Favorite book", description: "This book is amazing it's the best thing...", score: 5, user: user_1)
+    review_9 = book_3.reviews.create(title: "Joe Third is my new Favorite book", description: "This book is amazing it's the best thing...", score: 5, user: user_1)
+
+    visit books_path
+    click_on "Fewest Reviews"
+
+    expect(all('.book-entry')[0]).to have_content(book_3.title)
+
+    click_on "Most Reviews"
+    expect(all('.book-entry')[0]).to have_content(book_1.title)
+  end
+
 end

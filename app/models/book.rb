@@ -27,7 +27,40 @@ class Book < ApplicationRecord
   end
 
 
-  def self.average_rating_asc
+  def self.num_pages_DESC
+    Book.order('pages DESC')
+  end
+
+  def self.num_pages_ASC
+    Book.order('pages ASC')
+  end
+
+  def self.most_reviews
+    Book.select('books.*, count(reviews) as review_count')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order("review_count DESC")
+  end
+
+  def self.fewest_reviews
+    Book.select('books.*, count(reviews) as review_count')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order("review_count ASC")
+  end
+
+  def self.highest_rated
+    Book.select('books.*, avg(score) as avg_score')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order('avg_score DESC')
+  end
+
+  def self.lowest_rated
+    Book.select('books.*, avg(score) as avg_score')
+    .left_outer_joins(:reviews)
+    .group(:book_id, :id)
+    .order('avg_score ASC')
   end
 
   def lowest_rated_reviews

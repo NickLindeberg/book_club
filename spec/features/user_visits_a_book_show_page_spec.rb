@@ -1,4 +1,4 @@
-require 'rails_helper'
+ require 'rails_helper'
 
 describe 'User visits book show' do
   it 'shows single book attributes' do
@@ -71,7 +71,7 @@ describe 'User visits book show' do
     review_1 = book_1.reviews.create(title: "Joe First is Awful", description: "I hated this book so much...", score: 1, user: user_1)
     review_2 = book_1.reviews.create(title: "Joe First was pretty Bad", description: "This book was not as bad as I thought...", score: 3, user: user_1)
     review_3 = book_1.reviews.create(title: "Joe Second is Better", description: "This book wasn't the worst thing I've ever read...", score: 3, user: user_1)
-    
+
     review_4 = book_1.reviews.create(title: "Joe Second was an Okay book", description: "This book was not as bad as I thought...", score: 4, user: user_1)
     review_5 = book_1.reviews.create(title: "Joe Second is Really good", description: "This book was the very best thing I've ever read...", score: 5, user: user_1)
     review_6 = book_1.reviews.create(title: "Joe Second was the perfect_book", description: "So Amazeballs...", score: 5, user: user_1)
