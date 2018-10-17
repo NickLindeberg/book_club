@@ -31,6 +31,10 @@ class Book < ApplicationRecord
     Book.order('pages DESC')
   end
 
+  def self.num_pages_ASC
+    Book.order('pages ASC')
+  end
+
   def lowest_rated_reviews
     reviews.order(:score).limit(3)
   end

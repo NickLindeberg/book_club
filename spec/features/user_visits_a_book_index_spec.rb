@@ -124,4 +124,18 @@ describe 'user visits book index' do
     end
   end
 
+  it 'sorts books by page number, highest/lowest' do
+    author_1 = Author.create(name: "Mary Sue")
+    book_1 = author_1.books.create(title: "Joe, I", pages: 430, year: 1947)
+    book_2 = author_1.books.create(title: "Joe, II", pages: 450, year: 1947)
+    book_3 = author_1.books.create(title: "Joe, III", pages: 470, year: 1947)
+
+    visit books_path
+    save_and_open_page
+    click_on "Longest"
+
+    expect(all('.book-entry')[0]).to have_content(book_3.title)
+
+  end
+
 end

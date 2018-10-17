@@ -2,11 +2,14 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-
     @three_highest = Book.three_highest_rated_books
     @three_lowest = Book.three_lowest_rated_books
-
     @three_top_users = User.top_three_reviewers
+    if params[:sort] == "num_pages_ASC"
+      @books = @books.num_pages_ASC
+    else params[:sort] == "num_page_DESC"
+      @books = @books.num_pages_DESC
+    end
   end
 
   def show

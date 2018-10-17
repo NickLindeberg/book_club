@@ -42,8 +42,19 @@ describe Book, type: :model do
       book_3 = author_1.books.create(title: "Joe, III", pages: 500, year: 1949)
       book_4 = author_1.books.create(title: "Joe, IV", pages: 600, year: 1950)
 
-      fewest_pages = Book.num_pages_DESC
-      expect(fewest_pages).to eq([book_4, book_3, book_2, book_1])
+      highest_pages = Book.num_pages_DESC
+      expect(highest_pages).to eq([book_4, book_3, book_2, book_1])
+    end
+
+    it '.num_pages_ASC' do
+      author_1 = Author.create(name: "Mary Sue")
+      book_1 = author_1.books.create(title: "Joe, I", pages: 430, year: 1947)
+      book_2 = author_1.books.create(title: "Joe, II", pages: 450, year: 1948)
+      book_3 = author_1.books.create(title: "Joe, III", pages: 500, year: 1949)
+      book_4 = author_1.books.create(title: "Joe, IV", pages: 600, year: 1950)
+
+      fewest_pages = Book.num_pages_ASC
+      expect(fewest_pages).to eq([book_1, book_2, book_3, book_4])
     end
 
 
